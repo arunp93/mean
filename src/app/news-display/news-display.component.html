@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>News List <button class="btn btn-success" (click)="logout()">Logout</button></h1>
+    <a [routerLink]="['/news-create']" class="btn btn-default btn-lg">
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>date</th>
+          <th>title</th>
+          <th>description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let news of news">
+          <td>{{ news.date }}</td>
+          <td>{{ news.title }}</td>
+          <td>{{ news.description }}</td>
+          <td><a [routerLink]="['/news-details', news._id]">Show Detail</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

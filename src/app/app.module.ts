@@ -3,17 +3,18 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
-
 import { AppComponent } from './app.component';
-import { BookComponent } from './book/book.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
-
+import {NewsCreateComponent } from './news-create/news-create.component';
+import {NewsDisplayComponent } from './news-display/news-display.component';
+import { NewsDetailsComponent } from './news-details/news-details.component';
+import { NewsEditComponent } from './news-edit/news-edit.component';
 const appRoutes: Routes = [
   {
-    path: 'books',
-    component: BookComponent,
-    data: { title: 'Book List' }
+    path: 'news',
+    component: NewsDisplayComponent,
+    data: { title: 'News List' }
   },
   {
     path: 'login',
@@ -21,22 +22,40 @@ const appRoutes: Routes = [
     data: { title: 'Login' }
   },
   {
+    path: 'news-create',
+    component: NewsCreateComponent,
+    data: { title: 'Create News' }
+  },
+  {
     path: 'signup',
     component: SignupComponent,
     data: { title: 'Sign Up' }
   },
   { path: '',
-    redirectTo: '/books',
+    redirectTo: '/login',
     pathMatch: 'full'
+  },
+  {
+    path: 'news-details/:id',
+    component: NewsDetailsComponent,
+    data: { title: 'News Details' }
+  },
+  {
+    path: 'news-edit/:id',
+    component: NewsEditComponent,
+    data: { title: 'News Edit' }
   }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    BookComponent,
     LoginComponent,
-    SignupComponent
+    NewsDisplayComponent,
+    NewsCreateComponent,
+    SignupComponent,
+    NewsDetailsComponent,
+    NewsEditComponent,
   ],
   imports: [
     BrowserModule,
