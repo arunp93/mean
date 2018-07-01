@@ -7,7 +7,7 @@ import { of } from 'rxjs/observable/of';
 @Component({
   selector: 'app-news-display',
   templateUrl: './news-display.component.html',
-  styleUrls: ['./news-display.component.css']
+  styleUrls: ['./news-display.component.scss']
 })
 export class NewsDisplayComponent implements OnInit {
   news: any;

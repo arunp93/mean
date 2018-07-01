@@ -86,8 +86,16 @@ router.get('/news', passport.authenticate('jwt', { session: false}), function(re
       res.json(news);
     });
   } else {
-    return res.status(403).send({success: false, msg: 'Unauthorized.'});
+    return res.status(403).send({success: false, msg: 'no.'});
   }
+});
+router.get('/newsfeeds', function(req, res) {
+    console.log('data asked');
+    News.find(function (err, news) {
+      if (err) return next(err);
+      res.json(news);
+    });
+  
 });
 router.get('/news/:id', passport.authenticate('jwt', { session: false}), function(req, res, next) {
   var token = getToken(req.headers);
@@ -100,6 +108,7 @@ router.get('/news/:id', passport.authenticate('jwt', { session: false}), functio
     return res.status(403).send({success: false, msg: 'Unauthorized.'});
   }
 });
+
 router.delete('/news/:id',passport.authenticate('jwt', { session: false}), function(req, res, next) {
   var token = getToken(req.headers);
   if (token) {

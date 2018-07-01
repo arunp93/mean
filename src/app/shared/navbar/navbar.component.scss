@@ -1,0 +1,128 @@
+nav {
+
+  @media screen and (max-width: 768px){
+     height: 50px;
+  }
+}
+.navbar-color{
+    border-bottom-color: rgba(0,0,0,.2);
+    ul li a{
+        color: #fff;
+        @media (max-width: 768px){
+          color:#15151e;
+        }
+        text-decoration: none;
+    }
+}
+.navbar-fixed{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+
+.nav-active{
+  
+    color:  rgba(7,197,245,1) !important;
+  
+}
+
+.hidden-md-down{
+  display: none;
+  @media (max-width:768px){
+    display: block;
+  }
+}
+.dropdown-menu{
+ margin-left: -50px;
+}
+.booking{
+    padding: 9px 10px;
+    background:transparent;
+    transition:.2s ease-out .1s ;
+    opacity:1!important;
+    border:1px solid rgba(7,197,245,1);
+    border-radius:50px;
+    /* border-radius:15px 0px 50px 20%; */
+
+  }
+
+  .booking:hover{
+    background: linear-gradient(-45deg, #185b9db9, #43cea2be);
+    border-radius:50px;
+  }
+  .nav-link{
+  transition: .5s ease-in-out .1s;
+  font-family: 'Jura';
+  border-radius:0px;
+  border-top:4px solid transparent;
+  }
+  .booking a{
+    color: rgb(255, 255, 255) !important;
+  }
+  .nav-link:not(.active ):not(#button-buy):hover{
+  
+  border-top:4px solid rgba(7,197,245,1);
+  
+  transition: .2s ease-in-out .1s;
+  
+  
+  }
+
+  
+.hamburger .line{
+    width: 20px;
+    height:2px;
+    background-color: #ecf0f1;
+    display: block;
+    margin: 8px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .hamburger:hover{
+    cursor: pointer;
+  }
+
+ 
+#hamburger-6.is-active{
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition-delay: 0.6s;
+    -o-transition-delay: 0.6s;
+    transition-delay: 0.6s;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  
+  #hamburger-6.is-active .line:nth-child(2){
+    width: 0px;
+  }
+  
+  #hamburger-6.is-active .line:nth-child(1),
+  #hamburger-6.is-active .line:nth-child(3){
+    -webkit-transition-delay: 0.3s;
+    -o-transition-delay: 0.3s;
+    transition-delay: 0.3s;
+  }
+  
+  #hamburger-6.is-active .line:nth-child(1){
+    -webkit-transform: translateY(10px);
+    -ms-transform: translateY(10px);
+    -o-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+  
+  #hamburger-6.is-active .line:nth-child(3){
+    -webkit-transform: translateY(-10px) rotate(90deg);
+    -ms-transform: translateY(-10px) rotate(90deg);
+    -o-transform: translateY(-10px) rotate(90deg);
+    transform: translateY(-10px) rotate(90deg);
+  }
+  

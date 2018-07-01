@@ -1,0 +1,296 @@
+.activetabs{
+  border:1px solid rgb(49, 238, 245) !important; 
+  background-color:rgb(47, 35, 51) !important;  
+}
+.galo{
+  background-image: url('/assets/bg-about.jpg');
+  width:100vw;
+  height:100vh;
+  padding-top:70px;
+  /* background-image: url("../../../assets/Nehru-Trophy-Boat-Race.jpg"); */
+  background-size:cover;
+}
+
+.galname{
+  font-size:3em;
+  font-family:jura;
+  color:rgb(108, 255, 248);
+  width:100%;
+  text-align:center;
+}
+.demo-gallery > ul {
+  justify-content: center;
+  width:90%;
+  height:60vh;
+  margin:0px auto;
+  overflow-y:scroll;
+  background: rgba(21, 21, 30, 0.5) ;
+  border: 1px solid rgba(21, 21, 30, 0.7);
+  box-shadow: 0px 0px 10px  rgb(0, 0, 0);
+  border-radius:10px;
+}
+.demo-gallery > ul > li {
+  padding:0px!important;
+  margin-left:5px!important;
+  max-width:180px;  
+  border-radius:5px;
+}
+.demo-gallery > ul > li a {
+ 
+  display:inline-block;
+  overflow: hidden;
+  position: relative;
+  border-radius:0px !important;
+  margin:0px !important;
+  padding:0px !important;
+  border:1px solid rgb(105, 105, 105);
+
+  
+}
+.demo-gallery > ul > li a:hover {
+  box-shadow:0px 0px 10px rgb(29, 29, 29);
+  border:1px solid rgb(48, 189, 255);
+}
+.demo-gallery > ul > li a > img {
+  -webkit-transition: -webkit-transform 0.15s ease 0s;
+  -moz-transition: -moz-transform 0.15s ease 0s;
+  -o-transition: -o-transform 0.15s ease 0s;
+  transition: transform 0.15s ease 0s;
+  -webkit-transform: scale3d(1.5, 1.5, 1.5);
+  transform: scale3d(1.5, 1.5, 1.5);
+  height: 100%;
+  width: 100%;
+  -webkit-filter: grayscale(60%);
+  filter: grayscale(60%);
+  margin:0px; 
+}
+.demo-gallery > ul > li a:hover > img {
+  -webkit-transform: scale3d(1.2, 1.2, 1.2);
+  transform: scale3d(1.2, 1.2, 1.2);
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+.demo-gallery > ul > li a:hover .demo-gallery-poster > img {
+  opacity: 1;
+}
+.demo-gallery > ul > li a .demo-gallery-poster {
+  background-color: rgba(0, 0, 0, 0.1);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transition: background-color 0.15s ease 0s;
+  -o-transition: background-color 0.15s ease 0s;
+  transition: background-color 0.15s ease 0s;
+}
+.demo-gallery > ul > li a .demo-gallery-poster > img {
+  left: 50%;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  -webkit-transition: opacity 0.3s ease 0s;
+  -o-transition: opacity 0.3s ease 0s;
+  transition: opacity 0.3s ease 0s;
+}
+.demo-gallery > ul > li a:hover .demo-gallery-poster {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.demo-gallery .justified-gallery > a > img {
+  -webkit-transition: -webkit-transform 0.15s ease 0s;
+  -moz-transition: -moz-transform 0.15s ease 0s;
+  -o-transition: -o-transform 0.15s ease 0s;
+  transition: transform 0.15s ease 0s;
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  height: 100%;
+  width: 100%;
+}
+.demo-gallery .justified-gallery > a:hover > img {
+  -webkit-transform: scale3d(1.1, 1.1, 1.1);
+  transform: scale3d(1.1, 1.1, 1.1);
+}
+.demo-gallery .justified-gallery > a:hover .demo-gallery-poster > img {
+  opacity: 1;
+}
+.demo-gallery .justified-gallery > a .demo-gallery-poster {
+  background-color: rgba(0, 0, 0, 0.1);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transition: background-color 0.15s ease 0s;
+  -o-transition: background-color 0.15s ease 0s;
+  transition: background-color 0.15s ease 0s;
+}
+.demo-gallery .justified-gallery > a .demo-gallery-poster > img {
+  left: 50%;
+  margin-left: -10px;
+  margin-top: -10px;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  -webkit-transition: opacity 0.3s ease 0s;
+  -o-transition: opacity 0.3s ease 0s;
+  transition: opacity 0.3s ease 0s;
+}
+.demo-gallery .justified-gallery > a:hover .demo-gallery-poster {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.demo-gallery .video .demo-gallery-poster img {
+  height: 48px;
+  opacity: 0.8;
+  width: 48px;
+}
+.demo-gallery.dark > ul > li a {
+  border: 3px solid #04070a;
+}
+
+.ditems{
+  display:inline-block;
+  padding:5px 15px;
+  margin:0px;
+  text-decoration:none;
+  transition: .1s ease-in-out 0s;
+  color:white!important;
+  outline:none;
+  border-radius:5px;
+}
+
+ul.dm{
+  background-color:rgba(0,0, 0,.8);
+  max-width:90%;
+  /* box-shadow: 0px 1px 20px rgba(145, 145, 145, 0.445); */
+  margin:20px auto;
+  padding:10px;
+  border-radius:10px;
+
+
+}
+.dm li{
+  border:1px solid rgba(49, 239, 245, 0) !important; 
+  width:7.1%;
+  display: inline-block;
+  cursor:pointer;
+  margin:0px;
+}
+
+.ditems{
+  display:inline-block;
+  width:100%;
+  padding:10px;
+  margin:0px;
+  text-decoration:none;
+  transition: .1s ease-in-out 0s;
+  text-align:center;
+}
+
+.timeline1{
+  color:white;
+  text-align:center;
+  padding:0px;
+  border:none;
+}
+
+.ditems:hover{
+  background-color:rgb(49, 49, 49); 
+}
+
+
+
+@media screen and (min-width: 0px) and (max-width: 421px) {
+
+  .galo{
+
+    padding-top:20px;
+  
+  }
+
+  ul.dm{
+      
+      border-radius:5px;
+      padding:1%;
+      transition: 1s ease-out .2s;
+      margin:0px auto;
+    
+  }
+  .dm li{
+      width:75px;
+      display:inline-block;
+      height:100%;
+    
+  }
+  .ditems{
+      display:inline-block;
+      width:100%;
+      text-align:center;
+      margin:0px;
+      text-decoration:none;
+      transition: .1s ease-in-out 0s;
+      color:white!important;
+      padding:3px;
+  }
+
+  .galname{
+  
+      font-size:2em;
+
+  }
+
+
+  .demo-gallery > ul{
+      margin:7% auto!important;
+      height:50vh;
+      padding:1% 2%;
+     
+  }
+
+  .demo-gallery>ul>li{
+    max-width:80px;
+  }
+  
+  .timeline1{
+      margin:0% 1% 0% 1%;
+      padding:0px;
+     
+  }
+
+}
+  @media screen and (min-width: 421px) and (max-width:1024px) {
+
+      ul.dm{
+          padding:0%;
+          width:100%;
+          transition: .2s ease-out .2s;
+         
+          
+      }
+  
+      .dm li{
+        padding:5px;
+          display:inline-block;
+          width:70px;
+         
+      }
+  
+      .galname{
+          margin-top:4%;
+          padding:0% 10px;
+     
+      }
+  
+      .demo-gallery > ul{
+          margin:0px auto!important;
+          padding:2% 1%;
+          min-height:70vh;
+          
+         
+      }
+      .ditems{
+        font-size:10px;
+        padding:0px;
+    }
+  
+}
+

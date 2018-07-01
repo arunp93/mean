@@ -1,0 +1,173 @@
+.page-about {
+  width: 100%;
+  padding-top: 80px;
+  display: flex;
+  flex-flow: row nowrap;
+  background-image: url("/assets/bg-about.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .contentBasediv {
+    width: 75%;
+    @media screen and (max-width: 1279px) {
+      width: 100%;
+    }
+
+    .contentContainer {
+      height: 100%;
+      overflow: scroll;
+
+      .contentBox {
+        min-height: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content:center;
+
+        .header {
+          color: #fff !important;
+          margin-left: 25px;
+        }
+        .pageContent {
+          height: 80%;
+
+          .patronsContainer {
+            margin: 25px 20px;
+            @media screen and (max-width: 768px) {
+              margin: 15px 20px;
+            }
+            justify-content: center;
+          }
+
+          .patronCard {
+            margin-bottom: 10px;
+            text-align: center;
+            img {
+              margin-bottom: 10px;
+            }
+            padding: 5px;
+            background: rgba(21, 21, 30, 0.5) !important ;
+            border: 1px solid rgba(21, 21, 30, 0.7);
+            box-shadow: 0px 0px 10px rgb(0, 0, 0);
+            p {
+              margin-bottom: 5px;
+              color: rgb(255, 255, 255);
+              font-weight: 600;
+            }
+          }
+          .img-fluid {
+            height: 15vh;
+          }
+        }
+        .contactCard {
+          margin: 10px 0px;
+        .fa{
+          font-size: 20px;
+        }
+        }
+        .fa-check {
+          color: rgb(39, 238, 39);
+        }
+        .fa-ban {
+          color: rgb(221, 28, 28);
+        }
+        .fa-phone {
+          color: #185a9d;
+        }
+        .fa-mobile {
+          font-size: 25px;
+          color: #185a9d;
+        }
+        .fa-envelope {
+          color: rgb(221, 28, 28);
+        }
+        .fa-fax {
+          color: #185a9d;
+        }
+        .fa-map-marker{
+          color: #d86112;
+        }
+        .fa-ticket{
+          color: #185a9d;
+        }
+        .fa-plane{
+          color: #185a9d;
+        }
+        .fa-road{
+          color: #185a9d;
+        }
+        .fa-train{
+          color: #185a9d;
+        }
+        .fa-bus{
+          color: #185a9d;
+        }
+        .contact-icon {
+          padding: 5px;
+          font-size: 20px;
+        }
+        h6,h5 {
+          color: #fff;
+        }
+        .committeeContainer{
+          overflow-x: scroll;
+        }
+        .committee-table {
+          
+          margin: auto;
+          text-align: left;
+          padding: 20px 0;
+          align-self: center;
+
+          td,
+          th {
+            color: #fff;
+          }
+        }
+        hr{
+          color: #fff;
+          background-color: #fff;
+        }
+        #map-container {
+          height: 400px;
+        }
+        .feedbackContainer{
+          flex-flow: column nowrap;
+          text-align: center
+        }
+      }
+    }
+  }
+
+  .navContainer {
+    width: 25%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-content: flex-end;
+    @media screen and (max-width: 1279px) {
+      width: 0px;
+    }
+
+    .verticalNav {
+      height: 50vh;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+    }
+
+    .aboutList {
+      display: flex;
+      width: 250px;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: flex-start;
+      cursor: pointer;
+      margin-bottom: 0px;
+    }
+
+    .aboutListItem {
+      padding: 20px;
+    }
+
+  }
+}

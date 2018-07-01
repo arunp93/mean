@@ -1,0 +1,95 @@
+.page-about{
+  width: 100%;
+  padding-top: 80px;
+  display: flex;
+  flex-flow: row nowrap;
+  background-image: url('/assets/bg-about.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .contentBasediv{
+    position: relative;
+    width: 75%;
+    @media screen and (max-width: 1279px){
+      width: 100%;
+    }
+
+    .contentContainer{
+      height: 100%;
+      overflow: scroll;
+
+      .contentBox{
+        min-height: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+
+        .headerAboutContent{
+          color: #fff;
+          padding-left: 25px;
+        }
+
+        .pageContent{
+          height: 80%;
+          margin: 25px 20px;
+          @media screen and (max-width:768px) {
+            margin: 15px 20px;
+          }
+
+          .aboutContentText{
+            text-justify: inter-word;
+            text-align: justify;
+            font-size: 1.1em;
+          }
+        }
+        }
+    }
+    
+  }
+
+  .navContainer{
+    width: 25%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-content: flex-end;
+    @media screen and (max-width: 1279px){
+      width: 0px;
+    }
+
+    .verticalNav{
+      height: 50vh;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+    }
+
+    .aboutList{
+
+      display: flex;
+      width: 250px;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: flex-start;
+      cursor: pointer;
+      margin-bottom: 0px;
+    }
+
+    .aboutListItem{
+      padding: 20px;
+      
+      a{
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+
+    .downloadButton{
+      background: linear-gradient(-45deg, #185a9d, #43cea2);
+      cursor: pointer;
+      width: 250px;
+      height: 40px;
+      border: 0px;
+    }
+  }
+}

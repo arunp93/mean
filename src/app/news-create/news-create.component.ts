@@ -5,7 +5,7 @@ import { HttpClient , HttpHeaders } from '@angular/common/http';
 @Component({
   selector: 'app-news-create',
   templateUrl: './news-create.component.html',
-  styleUrls: ['./news-create.component.css'],
+  styleUrls: ['./news-create.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class NewsCreateComponent implements OnInit {

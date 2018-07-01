@@ -1,0 +1,70 @@
+<div class="fullpage-view">
+        <div class="section">
+                <div class="row">
+                  <div class="col-lg-4 col-sm-12 col-md-12 topdiv1 text-center glassBackground">
+                    <img src="assets/oldpic.png" alt="oldpic" class="img-fluid">
+                  </div>
+                  <div class="col-lg-4 col-sm-12 col-md-12 topdiv2 glassBackground">
+                    <p>The Nehru Trophy Boat Race named after
+                      <b style="color:rgb(241, 241, 241);font-weight:700">Pandit Jawaharlal Nehru</b> is conducted on the
+                      <b style="color:rgb(241, 241, 241);font-weight:700">Punnamda Lake</b>, near  <b style="color:rgb(241, 241, 241);font-weight:700">Alappuzha</b>, on the second Saturday of August every year.
+                      <br>
+                      <br>On the day of this fiercely fought boat race, the tranquil lake front is transformed into a sea of humanity with
+                      an estimated two lakh people, including tourists from abroad for watching it.
+                      <br>
+                      <br>For the people of each village in Kuttanad, a victory at this race for their village boat is something to be celebrated
+                      for months to come.</p>
+                  </div>
+              
+                  <div class="col-lg-4 col-sm-12 col-md-12 topdiv3 glassBackground">
+                    <h2>News Feed</h2>
+                    <div class="nf">
+                   
+                    <ul class="list-group">
+                    
+              
+                      <li class="list-group-item list-group-item-light" data-toggle="modal" data-target="#exampleModalCenter" *ngFor="let news of news">
+                        <span class="date">{{ news.date }}</span>
+                        <h3>{{ news.title }}</h3>
+                            <p>{{ news.description }}</p>
+                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+                            </div>
+                            <div class="modal-body">
+                              <h3>{{ news.title }}</h3>
+                              <p>{{ news.description }}</p>
+                            </div>
+                            <span class="date">{{ news.date }}</span>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                             
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      </li>
+                      
+              
+                 
+                    </ul>
+                   
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-lg-12 counter">
+                  
+                    <h2>Watch <span class="lv">LIVE</span></h2>
+                    <p>Link will be updated on event date. Stay tuned!!!</p>
+                  
+                  <div class="countr">
+                      <div class="clock"></div>
+                      
+                    </div>
+                </div>
+              </div>
+  
+</div>
