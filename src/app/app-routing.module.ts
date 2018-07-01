@@ -13,11 +13,13 @@ import {NewsCreateComponent } from './news-create/news-create.component';
 import {NewsDisplayComponent } from './news-display/news-display.component';
 import { NewsDetailsComponent } from './news-details/news-details.component';
 import { NewsEditComponent } from './news-edit/news-edit.component';
+import { ResetComponent } from './reset/reset.component';
+import { ForgotComponent } from './forgot/forgot.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: '/login',
     pathMatch: 'full'
   },
   {
@@ -67,7 +69,18 @@ const routes: Routes = [
     path: 'news-edit/:id',
     component: NewsEditComponent,
     data: { title: 'News Edit' }
-  }
+  },
+  {
+      path: 'reset',
+      component: ResetComponent,
+      data: { title: 'Reset' }
+    }
+  ,
+  {
+        path: 'forgot',
+        component: ForgotComponent,
+        data: { title: 'Forgot' }
+       }
   ,
   {
     path: '**',
