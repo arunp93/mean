@@ -7,6 +7,10 @@ var morgan = require('morgan');
 var mongoose = require('mongoose');
 var passport = require('passport');
 var config = require('./config/database');
+var session = require('express-session');
+var flash = require('express-flash');
+var nodemailer = require('nodemailer');
+
 var api = require('./routes/api');
 var app = express();
 mongoose.Promise = require('bluebird');
@@ -17,6 +21,12 @@ app.use(passport.initialize());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended':'false'}));
+app.use(session({ secret: 'session secret key' }));
+
+app.use(flash());
+
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use('/news', express.static(path.join(__dirname, 'dist')));
 app.use('/api', api);
@@ -33,7 +43,16 @@ app.use(function(err, req, res, next) {
   res.locals.error = req.app.get('env') === 'development' ? err : {};
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.json('error');
+});
+passport.serializeUser(function(user, done) {
+  done(null, user.id);
+});
+
+passport.deserializeUser(function(id, done) {
+  User.findById(id, function(err, user) {
+    done(err, user);
+  });
 });
 
 module.exports = app;

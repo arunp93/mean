@@ -7,6 +7,11 @@ var jwt = require('jsonwebtoken');
 var router = express.Router();
 var User = require("../models/user");
 var News = require("../models/news");
+var async = require('async');
+var crypto = require('crypto');
+var flash = require('express-flash');
+var nodemailer = require('nodemailer');
+
 getToken = function (headers) {
   if (headers && headers.authorization) {
     var parted = headers.authorization.split(' ');
@@ -122,4 +127,51 @@ router.put('/news/:id',passport.authenticate('jwt', { session: false}), function
   return res.status(403).send({success: false, msg: 'Unauthorized.'});
 }
 });
+router.post('/forgot', function(req, res) {
+  User.findOne({
+    username: req.body.username
+  }, function(err, user) {
+    if (err) throw err;
+
+    if (!user) {
+      res.status(401).send({success: false, msg: 'Authentication failed. User not found.'});
+    } else {
+      // check if password matches
+      user.comparePassword(req.body.password, function (err, isMatch) {
+        if (isMatch && !err) {
+          // if user is found and password is right create a token
+          var token = jwt.sign(user.toJSON(), config.secret);
+          // return the information including token as JSON
+          res.json({success: true, token: 'JWT ' + token});
+        } else {
+          res.status(401).send({success: false, msg: 'Authentication failed. Wrong password.'});
+        }
+      });
+    }
+  });
+});
+router.post('/reset', passport.authenticate('jwt', { session: false}), function(req, res) {
+  var token = getToken(req.headers);
+  console.log(token);
+  if (token) {
+    if (!req.body.username || !req.body.password) {
+      res.json({success: false, msg: 'Please pass username and password.'});
+    } else {
+      var newUser = new User({
+        username: req.body.username,
+        password: req.body.password
+      });
+      // save the user
+      mongoose.connection.collections['users'].drop( function(err) {
+        console.log('collection dropped');
+    });
+      newUser.save(function(err) {
+        res.json({success: true, msg: 'Successful created new user.'});
+      });
+    }
+  } else {
+    return res.status(403).send({success: false, msg: 'Unauthorized.'});
+  }
+});
+
 module.exports = router;

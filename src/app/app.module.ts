@@ -10,6 +10,8 @@ import {NewsCreateComponent } from './news-create/news-create.component';
 import {NewsDisplayComponent } from './news-display/news-display.component';
 import { NewsDetailsComponent } from './news-details/news-details.component';
 import { NewsEditComponent } from './news-edit/news-edit.component';
+import { ForgotComponent } from './forgot/forgot.component';
+import { ResetComponent } from './reset/reset.component';
 const appRoutes: Routes = [
   {
     path: 'news',
@@ -25,6 +27,11 @@ const appRoutes: Routes = [
     path: 'news-create',
     component: NewsCreateComponent,
     data: { title: 'Create News' }
+  },
+  {
+    path: 'reset',
+    component: ResetComponent,
+    data: { title: 'Reset' }
   },
   {
     path: 'signup',
@@ -44,8 +51,13 @@ const appRoutes: Routes = [
     path: 'news-edit/:id',
     component: NewsEditComponent,
     data: { title: 'News Edit' }
+  },
+  {
+    path: 'forgot',
+    component: ForgotComponent,
+    data: { title: 'Forgot' }
   }
-];
+  ];
 
 @NgModule({
   declarations: [
@@ -56,6 +68,8 @@ const appRoutes: Routes = [
     SignupComponent,
     NewsDetailsComponent,
     NewsEditComponent,
+    ForgotComponent,
+    ResetComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +77,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      { useHash: true, enableTracing: true } // <-- debugging purposes only
     )
   ],
   providers: [],

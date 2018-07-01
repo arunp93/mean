@@ -11,7 +11,9 @@
 		<input type="password" class="form-control" placeholder="Password" [(ngModel)]="loginData.password" name="password" required/>
 		<button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!loginForm.form.valid">Sign in</button>
 		<p>
-			Not a member? <a [routerLink]="['/signup']">Signup here</a>
+<a [routerLink]="['/forgot']">Reset Pass</a>
+<a [routerLink]="['/signup']">sign up</a>
+
 		</p>
 	</form>
 </div>
