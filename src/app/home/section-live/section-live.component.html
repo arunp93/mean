@@ -1,10 +1,10 @@
-<div class="fullpage-view">
+<div class="fullpage-view pagebackground">
         <div class="section">
                 <div class="row">
-                  <div class="col-lg-4 col-sm-12 col-md-12 topdiv1 text-center glassBackground">
+                  <div class="col-lg-4 col-sm-12 col-md-12 topdiv1 text-center glassBackgroundBlue">
                     <img src="assets/oldpic.png" alt="oldpic" class="img-fluid">
                   </div>
-                  <div class="col-lg-4 col-sm-12 col-md-12 topdiv2 glassBackground">
+                  <div class="col-lg-4 col-sm-12 col-md-12 topdiv2 glassBackgroundBlue">
                     <p>The Nehru Trophy Boat Race named after
                       <b style="color:rgb(241, 241, 241);font-weight:700">Pandit Jawaharlal Nehru</b> is conducted on the
                       <b style="color:rgb(241, 241, 241);font-weight:700">Punnamda Lake</b>, near  <b style="color:rgb(241, 241, 241);font-weight:700">Alappuzha</b>, on the second Saturday of August every year.
@@ -16,7 +16,7 @@
                       for months to come.</p>
                   </div>
               
-                  <div class="col-lg-4 col-sm-12 col-md-12 topdiv3 glassBackground">
+                  <div class="col-lg-4 col-sm-12 col-md-12 topdiv3 glassBackgroundBlue">
                     <h2>News Feed</h2>
                     <div class="nf">
                    
@@ -34,10 +34,11 @@
                               <h5 class="modal-title" id="exampleModalLongTitle"></h5>
                             </div>
                             <div class="modal-body">
+                                <span class="date" style="color: #004">{{ news.date }}</span>
                               <h3>{{ news.title }}</h3>
                               <p>{{ news.description }}</p>
                             </div>
-                            <span class="date">{{ news.date }}</span>
+                            
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                              

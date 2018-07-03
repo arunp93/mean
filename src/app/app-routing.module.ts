@@ -19,7 +19,7 @@ import { ForgotComponent } from './forgot/forgot.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/login',
+    redirectTo: '/home',
     pathMatch: 'full'
   },
   {
@@ -54,11 +54,7 @@ const routes: Routes = [
     component: NewsCreateComponent,
     data: { title: 'Create News' }
   },
-  {
-    path: 'signup',
-    component: SignupComponent,
-    data: { title: 'Sign Up' }
-  },
+
 
   {
     path: 'news-details/:id',
@@ -89,7 +85,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes )],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}

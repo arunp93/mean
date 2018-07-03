@@ -294,3 +294,6 @@ ul.dm{
   
 }
 
+.img-responsive{
+  max-width: 180px;
+}

@@ -1,6 +1,7 @@
 
 @media screen and (orientation: landscape) {
     .page-accordion{
+    
       height: 120vw;
       background-color: transparent;
     
@@ -41,6 +42,17 @@
         overflow-y: hidden;
         overflow-x: hidden;
     
+      }
+      .decription{
+        p{
+          font-size: 18px;
+        }
+      }
+      #myBtn{
+        a{
+          padding: 5px;
+          background-color: #151511;
+        }
       }
       .textbox{
         padding: 0 50px;

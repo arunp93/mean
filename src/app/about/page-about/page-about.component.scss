@@ -19,6 +19,7 @@
       overflow: scroll;
 
       .contentBox{
+        margin-top: 80px;
         min-height: 100%;
         display: flex;
         flex-flow: column nowrap;
@@ -39,7 +40,7 @@
           .aboutContentText{
             text-justify: inter-word;
             text-align: justify;
-            font-size: 1.1em;
+            font-size: 1.2em;
           }
         }
         }

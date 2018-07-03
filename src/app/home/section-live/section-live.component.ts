@@ -33,7 +33,7 @@ export class SectionLiveComponent implements OnInit {
       moment.tz.link('Asia/Calcutta|Asia/Kolkata');
 
      // Target future date/24 hour time/Timezone.
-      const targetDate = moment.tz('2018-08-11 10:00', 'Asia/Calcutta|Asia/Kolkata');
+      const targetDate = moment.tz('2018-08-11 01:25', 'Asia/Calcutta|Asia/Kolkata');
       // Calculate the difference in seconds between the future and current date
       const diff = targetDate / 1000 - currentDate.getTime() / 1000;
       function checktime() {
@@ -50,7 +50,12 @@ export class SectionLiveComponent implements OnInit {
         clock = $('.clock').FlipClock(0, {
           clockFace: 'DailyCounter',
           countdown: true,
-          autostart: false
+          autostart: false,
+          callbacks: {
+            stop: function() {
+              console.log('haha');
+            }
+          }
         });
         } else {
         // Run countdown timer
@@ -59,7 +64,7 @@ export class SectionLiveComponent implements OnInit {
           countdown: true,
           callbacks: {
             stop: function() {
-              console.log('Timer has ended!');
+              $('.message').html('The clock has stopped!');
             }
           }
         });

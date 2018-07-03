@@ -12,28 +12,34 @@ export class PageAboutComponent implements OnInit {
     window.open('/assets/about-pdf.pdf');
   }
   ngOnInit() {
+    $(document).ready(function() {
+      // Add smooth scrolling to all links
+      $('a').on('click', function(event) {
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== '') {
+          // Prevent default anchor click behavior
+          event.preventDefault();
 
-    $('ul li a[href^=\'#\']').on('click', function(e) {
+          // Store hash
+          const hash = this.hash;
 
-      // prevent default anchor click behavior
-      e.preventDefault();
 
-      // store hash
-      const hash = this.hash;
-      console.log(' before function ' + $(hash).offset().top);
-      // animate
-      $('.contentBasediv, .contentContainer').animate({
-          scrollTop: $(hash).offset().top
-        }, 1000, function() {
-          console.log('in function' + $(hash).offset().top);
-          // when done, add hash to url
-          // (default click behaviour)
-          window.location.hash = hash;
-        });
 
-        console.log('after function' + $(hash).offset().top);
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+          if ( $(hash).offset().top !== 0) {
+            const targetTop = $(hash).offset().top - $('.page-about').offset().top;
+            // $('#contentContainer').animate({scrollTop: $(hash).offset().top }, 'slow');
+            $('.contentContainer').scrollTop(targetTop - 80);
 
-   });
+             // Add hash (#) to URL when done scrolling (default click behavior)
+     window.location.hash = hash;
+          }
+
+
+        } // End if
+      });
+    });
   }
 
 }

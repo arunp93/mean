@@ -23,25 +23,23 @@ export class PageContactComponent implements OnInit {
           // Store hash
           const hash = this.hash;
 
+
+
           // Using jQuery's animate() method to add smooth page scroll
           // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-          console.log(hash);
-          console.log($(hash).offset().top);
-          if ($(hash).offset().top !== 0) {
-            const targetTop =
-              $(hash).offset().top - $('.contentContainer > *').offset().top;
-            console.log(targetTop + 'targettop');
+          if ( $(hash).offset().top !== 0) {
+            const targetTop = $(hash).offset().top - $('.contentContainer').offset(80).top;
             // $('#contentContainer').animate({scrollTop: $(hash).offset().top }, 'slow');
             $('.contentContainer').scrollTop(targetTop);
-            console.log($(hash).offset().top);
-            // Add hash (#) to URL when done scrolling (default click behavior)
-            window.location.hash = hash;
-            return false;
+
+             // Add hash (#) to URL when done scrolling (default click behavior)
+     window.location.hash = hash;
           }
+
+
         } // End if
       });
     });
-
     // Regular map
     // function regular_map() {
     //   const var_location = new google.maps.LatLng(40.725118, -73.997699);
