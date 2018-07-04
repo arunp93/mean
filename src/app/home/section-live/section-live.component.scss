@@ -1,4 +1,6 @@
-
+.pagelive{
+  padding-top: 70px;
+}
 .section{
 
     height:100vh;
@@ -6,7 +8,16 @@
    
 
 }
-
+.row{
+  padding-top: 70px;
+}
+.carousel{
+  margin: auto;
+  // padding-top: 80px!important;
+  height: 60vh !important;
+  overflow: hidden;
+  width: 90% !important;
+}
 
 .topdiv1{
   height:50vh;
@@ -110,8 +121,14 @@ p{
 .listhead{
   color:rgb(80, 80, 80);
 }
-
+#watchliveLink{
+text-align: center;
+display: none;
+}
 .counter{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
   border-top:3px solid rgba(16, 101, 134, 0.404);
   height:250px;
   background: linear-gradient(-45deg, #185a9d, #43cea2);

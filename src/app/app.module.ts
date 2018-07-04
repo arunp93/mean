@@ -24,6 +24,7 @@ import { NewsDetailsComponent } from './news-details/news-details.component';
 import { NewsEditComponent } from './news-edit/news-edit.component';
 import { ForgotComponent } from './forgot/forgot.component';
 import { ResetComponent } from './reset/reset.component';
+
 @NgModule({
   declarations: [
     AppComponent,

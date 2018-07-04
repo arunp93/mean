@@ -6,7 +6,7 @@ body {
   color: #fff;
 }
 .fullpage-view {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   overflow-x: hidden;
 }
@@ -14,7 +14,7 @@ body {
 
 
 .mb-450 {
-  margin-bottom: 449px;
+  margin-bottom: 498px;
   @media (max-width: 480px) {
     margin-bottom: 100vh;
   }
@@ -42,7 +42,7 @@ p {
   padding: 10px;
 }
 .glassBackgroundBlue {
-  
+
   border: 1px solid rgba(21, 21, 30, 0.7);
   padding: 10px;
 }

@@ -1,6 +1,5 @@
-<div class="page-about mb-450 fullpage-view ">
-    <div class="contentBasediv">
-        <div class="contentContainer">
+<div class="page-about fullpage-view ">
+
             <div class="contentBox" id="about-history">
                 <h1 class="headerAboutContent flex-start">HISTORY</h1>
                 <div class="pageContent glassBackground">
@@ -123,26 +122,25 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="scroll">
-                <div class="scroll-downs">
-                        <div class="mousey">
-                          <div class="scroller"></div>
-                        </div>
-                      </div>
-        </div>
-    </div>
+      
+       
     <div class="navContainer">
-        <div class="verticalNav ">
+        <div class="verticalNav " id="aboutNavigation">
             <ul class="aboutList list-unstyled glassBackground ml-auto">
-                <li class="aboutListItem verticalListItem1"><a href="/about/#about-history">HISTORY</a></li>
-                <li class="aboutListItem verticalListItem2"><a href="/about/#about-nt">NEHRU TROPHY</a></li>
-                <li class="aboutListItem verticalListItem3"><a href="/about/#about-voe">VENICE OF EAST</a></li>
-                <li class="aboutListItem verticalListItem4"><a href="/about/#about-boatrace">BOAT RACE</a></li>
+                <li class="aboutListItem verticalListItem1 selected"><a href="#about-history">HISTORY  </a></li>
+                <li class="aboutListItem verticalListItem2"><a href="#about-nt">NEHRU TROPHY  </a></li>
+                <li class="aboutListItem verticalListItem3"><a href="#about-voe">VENICE OF EAST  </a></li>
+                <li class="aboutListItem verticalListItem4"><a href="#about-boatrace">BOAT RACE  </a></li>
             </ul>
             <button class="downloadButton ml-auto " (click)="downloadPDF()" ><span><strong>Download All</strong></span></button>
         </div>
     </div>
     
 </div>
-<app-footer></app-footer>
+<div class="scroll">
+        <div class="scroll-downs">
+                <div class="mousey">
+                  <div class="scroller"></div>
+                </div>
+              </div>
+</div>

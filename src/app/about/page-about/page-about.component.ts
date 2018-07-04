@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-declare var $: any ;
+declare const $: any;
 @Component({
   selector: 'app-page-about',
   templateUrl: './page-about.component.html',
   styleUrls: ['./page-about.component.scss']
 })
 export class PageAboutComponent implements OnInit {
-
-  constructor() { }
+  constructor() {}
   downloadPDF() {
     window.open('/assets/about-pdf.pdf');
   }
   ngOnInit() {
     $(document).ready(function() {
+      $(document).on('scroll', onScroll);
       // Add smooth scrolling to all links
       $('a').on('click', function(event) {
         // Make sure this.hash has a value before overriding default behavior
@@ -23,23 +23,35 @@ export class PageAboutComponent implements OnInit {
           // Store hash
           const hash = this.hash;
 
-
-
           // Using jQuery's animate() method to add smooth page scroll
           // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-          if ( $(hash).offset().top !== 0) {
-            const targetTop = $(hash).offset().top - $('.page-about').offset().top;
-            // $('#contentContainer').animate({scrollTop: $(hash).offset().top }, 'slow');
-            $('.contentContainer').scrollTop(targetTop - 80);
-
-             // Add hash (#) to URL when done scrolling (default click behavior)
-     window.location.hash = hash;
-          }
-
-
+          $('html, body').animate(
+            {
+              scrollTop: $(hash).offset().top
+            },
+            800,
+            function() {
+              // Add hash (#) to URL when done scrolling (default click behavior)
+              window.location.hash = hash;
+              $(document).on('scroll', onScroll);
+            }
+          );
         } // End if
       });
     });
-  }
 
+    function onScroll(event) {
+      const scrollPos = $(document).scrollTop();
+      $('#aboutNavigation a').each(function () {
+          const currLink = $(this);
+          const refElement = $(currLink.attr('href'));
+          if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+              $('#aboutNavigation ul li a').removeClass('selected');
+              currLink.addClass('selected');
+          }else {
+              currLink.removeClass('selected');
+          }
+      });
+  }
+  }
 }
