@@ -19,14 +19,19 @@
             "assets": [
               "src/assets",
               "src/favicon.ico"
+              
             ],
             "styles": [
               "src/styles.scss",
               "node_modules/bootstrap/dist/css/bootstrap.css"
+              
+
             ],
             "scripts": [
               
               "node_modules/bootstrap/dist/js/bootstrap.js"
+            
+
 
             ]
           },
@@ -77,10 +82,12 @@
             "scripts": [],
             "styles": [
               "src/styles.scss"
+             
             ],
             "assets": [
               "src/assets",
               "src/favicon.ico"
+              
             ]
           }
         },

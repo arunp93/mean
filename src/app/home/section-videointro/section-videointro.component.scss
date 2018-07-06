@@ -13,7 +13,9 @@ text-align: center;
 }
 .video-intro{
   margin: 0;
-  height:70vw;
+  height: 100vh;
+  width: 100vw;
+  object-fit: fill;
   @media (max-width:1000px){
     height: 100vh;
     @media (max-width:768px){

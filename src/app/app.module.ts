@@ -2,9 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 import { PageHomeComponent } from './home/page-home/page-home.component';
 import { SectionVideointroComponent } from './home/section-videointro/section-videointro.component';
@@ -24,6 +26,7 @@ import { NewsDetailsComponent } from './news-details/news-details.component';
 import { NewsEditComponent } from './news-edit/news-edit.component';
 import { ForgotComponent } from './forgot/forgot.component';
 import { ResetComponent } from './reset/reset.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,9 +52,19 @@ import { ResetComponent } from './reset/reset.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+           TranslateModule.forRoot({
+               loader: {
+                   provide: TranslateLoader,
+                   useFactory: HttpLoaderFactory,
+                   deps: [HttpClient]
+               }
+           }),
     AppRoutingModule
   ],
   providers: [ HttpClientModule ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+export function HttpLoaderFactory(http: HttpClient) {
+    return new TranslateHttpLoader(http);
+}

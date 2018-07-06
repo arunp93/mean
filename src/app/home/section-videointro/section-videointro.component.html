@@ -1,9 +1,10 @@
 <div class="fullpage-view ">
   <div class="video">
-      <video  class="video-intro" poster="/assets/mainback.jpg" playsinline autoplay muted loop>
-  
-    <source id="video-intro" src="/assets/mainback.jpg" type="video/mp4">
-  </video></div>
+    <video class="video-intro" poster="/assets/mainback.jpg" playsinline autoplay muted loop>
+
+      <source id="video-intro" src="/assets/bgvideo.mp4" playsinline autoplay muted loop type="video/mp4">
+    </video>
+  </div>
   <div class="mask  d-flex justify-content-center align-items-center">
     <!-- Content -->
     <div class="contnt">
@@ -12,16 +13,16 @@
         <div class="cnt">
 
           <h2 class="ntbr">
-            <span id="Nehru">NEHRU TROPHY</span>
-            <br>BOAT RACE</h2>
+            <span id="Nehru">{{ 'home1.head1' | translate }}</span>
+            <br>{{ 'home1.head2' | translate }}</h2>
         </div>
 
         <div class="dte">
           <h1 class="dtebox">AUG
-          <br>
-          <span class="num">11</span>
+            <br>
+            <span class="num">11</span>
           </h1>
-          <h1 class="lake">PUNNAMADA LAKE</h1>
+          <h1 class="lake">{{ 'home1.place' | translate }}</h1>
 
         </div>
 
@@ -29,21 +30,21 @@
 
       <hr>
 
-      <p class="pagecnt" id="myDIV">Official website of
-        <b>The Nehru Trophy Boat Race 2018</b>
+      <p class="pagecnt">{{ 'home1.caption' | translate }}
+
       </p>
     </div>
     <span class="sx">
       <b>66
-        <sup class="sups">th</sup>edition</b>
+        <sup class="sups">th</sup>{{ 'home1.edition' | translate }}</b>
     </span>
     <!-- Content -->
   </div>
   <div class="scroll">
-      <div class="scroll-downs">
-              <div class="mousey">
-                <div class="scroller"></div>
-              </div>
-            </div>
-</div>
+    <div class="scroll-downs">
+      <div class="mousey">
+        <div class="scroller"></div>
+      </div>
+    </div>
+  </div>
 </div>

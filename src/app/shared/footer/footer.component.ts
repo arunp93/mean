@@ -8,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class FooterComponent implements OnInit {
 
   constructor() { }
+  OpenfeedbackForm() {
+    window.open('https://goo.gl/forms/0t6p2pFRJobEzzZI2');
+  }
 
   ngOnInit() {
+    
   }
 
 }

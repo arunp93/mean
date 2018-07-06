@@ -1,7 +1,61 @@
+.socialBar{
+  height: 0px;
+  width: 100%;
+}
+.socialicon{
+  color: rgba(255,255,255, .5) !important;
+}
+.ntbrlogo{
+  width: 40px;
+  @media (max-width:480px){
+    width: 20px;
+  }
+}
+.statelogo{
+  width: 70px;
+  margin-left: 15px;
+  @media (max-width:480px){
+    width: 40px;
+    margin-left: 5px;
+  }
+}
+.icon-bar{
+  display: inline;
+  @media (max-width:480px){
+    display: none;
+  }
+}
 nav {
 
   @media screen and (max-width: 768px){
      height: 50px;
+  }
+  .socialicon{
+    font-size: 1.5em;
+    color: white;
+    margin:  5px;
+    text-decoration: none;
+    cursor: pointer;
+
+    
+  }
+  .fa-facebook:hover{
+    color: rgb(59,89,152) !important;
+  }
+  .fa-twitter:hover{
+    color:  rgb(29, 161, 242) !important;
+  }
+  .fa-google-plus-g:hover{
+    color: rgb(219, 68, 55) !important;
+  }
+  .fa-instagram:hover{
+    color:  rgb(188, 42, 141) !important;
+  }
+  .fa-youtube:hover{
+    color: rgb(255, 0, 0) !important;
+  }
+  .fa-android:hover{
+    color: #A4C639 !important;
   }
 }
 .navbar-color{

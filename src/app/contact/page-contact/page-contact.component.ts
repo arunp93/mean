@@ -13,6 +13,7 @@ export class PageContactComponent implements OnInit {
   }
   ngOnInit() {
     $(document).ready(function() {
+      $(document).on('scroll', onScroll);
       // Add smooth scrolling to all links
       $('a').on('click', function(event) {
         // Make sure this.hash has a value before overriding default behavior
@@ -23,23 +24,36 @@ export class PageContactComponent implements OnInit {
           // Store hash
           const hash = this.hash;
 
-
-
           // Using jQuery's animate() method to add smooth page scroll
           // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-          if ( $(hash).offset().top !== 0) {
-            const targetTop = $(hash).offset().top - $('.contentContainer').offset(80).top;
-            // $('#contentContainer').animate({scrollTop: $(hash).offset().top }, 'slow');
-            $('.contentContainer').scrollTop(targetTop);
-
-             // Add hash (#) to URL when done scrolling (default click behavior)
-     window.location.hash = hash;
-          }
-
-
+          $('html, body').animate(
+            {
+              scrollTop: $(hash).offset().top
+            },
+            800,
+            function() {
+              // Add hash (#) to URL when done scrolling (default click behavior)
+              window.location.hash = hash;
+              $(document).on('scroll', onScroll);
+            }
+          );
         } // End if
       });
     });
+
+    function onScroll(event)  {
+      const scrollPos = $(document).scrollTop();
+      $('#contactNavigation a').each(function () {
+          const currLink = $(this);
+          const refElement = $(currLink.attr('href'));
+          if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+              $('#contactNavigation ul li a').removeClass('selected');
+              currLink.addClass('selected');
+          }else {
+              currLink.removeClass('selected');
+          }
+      });
+  }
     // Regular map
     // function regular_map() {
     //   const var_location = new google.maps.LatLng(40.725118, -73.997699);
