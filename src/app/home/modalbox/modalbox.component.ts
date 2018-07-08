@@ -28,7 +28,7 @@
           var path;
           this.http.get('/api/modall/' + id).subscribe(data => {
             path = data;
-            window.location.href = '/assets/about/about-pdf.pdf'
+            window.location.href = '/assets/uploads/about-pdf.pdf'
           }, err => {
             if (err.status === 401) {
               this.router.navigate(['home']);
