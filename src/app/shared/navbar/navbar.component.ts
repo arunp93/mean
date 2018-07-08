@@ -14,6 +14,15 @@ export class NavbarComponent implements OnInit {
   constructor(private translate: TranslateService) { }
 
   ngOnInit() {
+    const LanguageSelect = document.getElementById('languageSelection');
+    const options = LanguageSelect.getElementsByClassName('languages');
+    for (let i = 0; i < options.length; i++) {
+    options[i].addEventListener('click', function() {
+    const current = document.getElementsByClassName('languageSelected');
+    current[0].className = current[0].className.replace('languageSelected', 'languagenotSelected');
+    this.className = this.className.replace('languagenotSelected', 'languageSelected');
+    });
+  }
     $(document).ready(function() {
       $('.hamburger').click(function() {
         $(this).toggleClass('is-active');

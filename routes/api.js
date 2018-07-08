@@ -7,13 +7,6 @@ var jwt = require('jsonwebtoken');
 var router = express.Router();
 var User = require("../models/User");
 var News = require("../models/News");
-var async = require('async');
-var crypto = require('crypto');
-var flash = require('express-flash');
-var nodemailer = require('nodemailer');
-var fs = require('file-system');
-var path = require('path');
-var assert = require('assert');
 var multer = require('multer');
 getToken = function (headers) {
   if (headers && headers.authorization) {

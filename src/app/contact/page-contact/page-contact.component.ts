@@ -46,7 +46,7 @@ export class PageContactComponent implements OnInit {
       $('#contactNavigation a').each(function () {
           const currLink = $(this);
           const refElement = $(currLink.attr('href'));
-          if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+          if (refElement.position().top - 80 <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
               $('#contactNavigation ul li a').removeClass('selected');
               currLink.addClass('selected');
           }else {

@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   encapsulation: ViewEncapsulation.None
 })
 export class NewsDetailsComponent implements OnInit {
-  news = {};
+  news: any = {};
   constructor(private router: Router, private route: ActivatedRoute, private http: HttpClient) { }
   ngOnInit() {
     this.getNewsDetail(this.route.snapshot.params['id']);

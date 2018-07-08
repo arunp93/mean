@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PageHomeComponent } from './home/page-home/page-home.component';
 import { PageAboutComponent } from './about/page-about/page-about.component';
-import { AppComponent } from './app.component';
 import { PageContactComponent } from './contact/page-contact/page-contact.component';
 import { GalleryComponent } from './gallery/gallery/gallery.component';
 
@@ -25,6 +24,10 @@ const routes: Routes = [
   {
     path: 'home',
     component: PageHomeComponent
+  },
+  {
+    path: 'signup',
+    component: SignupComponent
   },
   {
     path: 'about',
@@ -95,7 +98,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {useHash : true} )],
+  imports: [RouterModule.forRoot(routes, {useHash: true} )],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}

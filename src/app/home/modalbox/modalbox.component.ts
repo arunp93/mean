@@ -8,7 +8,7 @@
         styleUrls: ['./modalbox.component.scss']
       })
       export class ModalboxComponent implements OnInit {
-      news = {};
+        news: any = {};
       constructor(private router: Router, private route: ActivatedRoute, private http: HttpClient) { }
 
         ngOnInit() {

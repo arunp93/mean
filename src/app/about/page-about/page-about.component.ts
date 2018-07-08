@@ -7,8 +7,11 @@ declare const $: any;
 })
 export class PageAboutComponent implements OnInit {
   constructor() {}
-  downloadPDF() {
-    window.open('/assets/about-pdf.pdf');
+  downloadPDFeng() {
+    window.open('assets/about-pdf/about-pdf-eng.pdf');
+  }
+  downloadPDFmal() {
+    window.open('assets/about-pdf/about-pdf-mal.pdf');
   }
   ngOnInit() {
     $(document).ready(function() {
@@ -45,7 +48,7 @@ export class PageAboutComponent implements OnInit {
       $('#aboutNavigation a').each(function () {
           const currLink = $(this);
           const refElement = $(currLink.attr('href'));
-          if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+          if (refElement.position().top - 100 <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
               $('#aboutNavigation ul li a').removeClass('selected');
               currLink.addClass('selected');
           }else {

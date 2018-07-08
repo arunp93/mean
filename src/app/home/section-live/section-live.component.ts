@@ -4,7 +4,6 @@ import { HttpClient } from '@angular/common/http';
 // import * as $ from 'jquery';
 declare var $ ;
 declare var moment;
-
 @Component({
   selector: 'app-section-live',
   templateUrl: './section-live.component.html',
@@ -13,7 +12,8 @@ declare var moment;
 @Injectable()
 
 export class SectionLiveComponent implements OnInit {
-  news: {};
+  news: any = {};
+
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
@@ -25,7 +25,6 @@ export class SectionLiveComponent implements OnInit {
         // this.router.navigate(['login']);
       }
     });
-    console.log(this.news);
     $(document).ready(function() {
       let clock;
      // Grab the current date
