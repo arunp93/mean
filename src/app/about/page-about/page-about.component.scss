@@ -85,13 +85,29 @@
     .activeverticalnav a {
       color: #185a9d !important;
     }
-
+    .downloadContainer{
+      width: 250px;
+      align-self: flex-end;
+      padding: 0px;
+    }
+    .btn-group{
+      width: 100%;
+      .btn{
+        width: 50%;
+        border: 0px !important;
+    }
+    }
     .downloadButton {
+      color: #fff; 
       background: linear-gradient(-45deg, #185a9d, #43cea2);
       cursor: pointer;
       width: 250px;
       height: 40px;
       border: 0px;
+      
+    }
+    .selectPdfln{
+      display: block;
     }
   }
 }

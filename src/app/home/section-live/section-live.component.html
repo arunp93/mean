@@ -52,9 +52,9 @@
   
               <li class="list-group-item list-group-item-light" data-toggle="modal" data-target="#exampleModalCenter" *ngFor="let news of news"
                 [routerLink]="['/modalbox', news._id]">
-                <span class="date">{{ news.date }}</span>
-                <h4>{{ news.title }}</h4>
-                <p>{{ news.description }}<i class="fas fa-long-arrow-alt-right"></i></p>
+                <span class="date">{{ news.date || 'date' }}</span>
+                <h4>{{ news.title || 'date' }}</h4>
+                <p>{{ news.description || 'date' }}<i class="fas fa-long-arrow-alt-right"></i></p>
                 <!-- <a >Show Detail</a>    -->
               </li>
   

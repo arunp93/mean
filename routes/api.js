@@ -11,7 +11,12 @@ var async = require('async');
 var crypto = require('crypto');
 var flash = require('express-flash');
 var nodemailer = require('nodemailer');
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.send('Express RESTful API');
+});
 
+module.exports = router;
 getToken = function (headers) {
   if (headers && headers.authorization) {
     var parted = headers.authorization.split(' ');
@@ -24,23 +29,23 @@ getToken = function (headers) {
     return null;
   }
 };
-// router.post('/signup', function(req, res) {
-//   if (!req.body.username || !req.body.password) {
-//     res.json({success: false, msg: 'Please pass username and password.'});
-//   } else {
-//     var newUser = new User({
-//       username: req.body.username,
-//       password: req.body.password
-//     });
-//     // save the user
-//     newUser.save(function(err) {
-//       if (err) {
-//         return res.json({success: false, msg: 'Username already exists.'});
-//       }
-//       res.json({success: true, msg: 'Successful created new user.'});
-//     });
-//   }
-// });
+router.post('/signup', function(req, res) {
+  if (!req.body.username || !req.body.password) {
+    res.json({success: false, msg: 'Please pass username and password.'});
+  } else {
+    var newUser = new User({
+      username: req.body.username,
+      password: req.body.password
+    });
+    // save the user
+    newUser.save(function(err) {
+      if (err) {
+        return res.json({success: false, msg: 'Username already exists.'});
+      }
+      res.json({success: true, msg: 'Successful created new user.'});
+    });
+  }
+});
 router.post('/signin', function(req, res) {
   User.findOne({
     username: req.body.username

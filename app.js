@@ -18,15 +18,18 @@ mongoose.connect(config.database, { promiseLibrary: require('bluebird') })
   .then(() =>  console.log('connection succesful'))
   .catch((err) => console.error(err));
 app.use(passport.initialize());
+console.log('passport succesful');
 app.use(logger('dev'));
+console.log('logger succesful');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended':'false'}));
 app.use(session({ secret: 'session secret key' }));
-
+console.log('parser succesful');
 app.use(flash());
 
 app.use(passport.initialize());
 app.use(passport.session());
+console.log('success');
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use('/news', express.static(path.join(__dirname, 'dist')));
 app.use('/api', api);

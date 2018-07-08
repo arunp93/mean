@@ -1,8 +1,8 @@
 <div class="container">
-    <h1>{{ news.title }}</h1>
+    <h1>{{news.title || 'title' }}</h1>
     <dl class="list">
       <dt>Date</dt>
-      <dd>{{ news.date}}</dd>
+      <dd>{{  news.date}}</dd>
       <dt>Description</dt>
       <dd>{{ news.description }}</dd>
     </dl>

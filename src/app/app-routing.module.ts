@@ -27,6 +27,10 @@ const routes: Routes = [
     component: PageHomeComponent
   },
   {
+    path: 'signup',
+    component: SignupComponent
+  },
+  {
     path: 'about',
     component: PageAboutComponent
   },
@@ -85,7 +89,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes )],
+  imports: [RouterModule.forRoot(routes, {useHash: true} )],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}

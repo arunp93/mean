@@ -110,8 +110,23 @@
                 <li class="aboutListItem verticalListItem2"><a href="#about-nt">{{ 'about.h2' | translate }} </a></li>
                 <li class="aboutListItem verticalListItem3"><a href="#about-voe">{{ 'about.h3' | translate }} </a></li>
                 <li class="aboutListItem verticalListItem4"><a href="#about-boatrace">{{ 'about.h4' | translate }}  </a></li>
+                
             </ul>
-            <button class="downloadButton ml-auto " (click)="downloadPDF()" ><span><strong>{{ 'about.download' | translate }}</strong></span></button>
+            <!--  -->
+           <ul class=" downloadContainer ">
+            <button class=" downloadButton"  type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                {{ 'about.download' | translate }}
+                 </button>
+                 <div class="btn-group collapse " id="collapseExample" role="group" aria-label="Basic example">
+                     <p> {{ 'about.viewaspdf' | translate }}</p>
+                    <button type="button" class="btn btn-secondary" (click)="downloadPDFeng()"> {{ 'about.english' | translate }}</button>
+                    <button type="button" class="btn btn-secondary" (click)="downloadPDFmal()"> {{ 'about.malayalam' | translate }}</button>
+                  </div>
+                </ul>
+                
+                
+              
+              
         </div>
     </div>
     

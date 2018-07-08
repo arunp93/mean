@@ -155,8 +155,8 @@
             </div>
         </div>
     </div>
-    <div class="contentBox ">
-        <h1 class="header">{{ 'contact.head2' | translate }}</h1>
+    <div class="contentBox " id="contact-committee">
+        <h1 class="header">{{ 'committee.mainhead' | translate }}</h1>
         <div class="pageContent container">
             <div class=" row justify-space-around committeeContainer">
                 <table class="table table-hover committee-table table-borderless glassBackground">
@@ -247,7 +247,8 @@
 
                 <div class="contactCard glassBackground col-sm-12 col-md-5">
 
-                            <iframe id="I1" frameborder="0" height="100%" width="100%" marginheight="0" marginwidth="0" name="I1" scrolling="no" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Nehru+Trophy+Boat+Race+Finishing+Point,+Alappuzha,+Kerala,+India&amp;aq=0&amp;sll=37.0625,-95.677068&amp;sspn=33.435463,56.513672&amp;ie=UTF8&amp;hq=Nehru+Trophy+Boat+Race+Finishing+Point,&amp;hnear=Alappuzha,+Kerala,+India&amp;ll=9.500805,76.35336&amp;spn=0.022961,0.05911&amp;output=embed"></iframe><div id="map-container" class="z-depth-1"></div>
+                    <iframe id="I1" frameborder="0" height="100%" width="100%" marginheight="0" marginwidth="0" name="I1" scrolling="no" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Nehru+Trophy+Boat+Race+Finishing+Point,+Alappuzha,+Kerala,+India&amp;aq=0&amp;sll=37.0625,-95.677068&amp;sspn=33.435463,56.513672&amp;ie=UTF8&amp;hq=Nehru+Trophy+Boat+Race+Finishing+Point,&amp;hnear=Alappuzha,+Kerala,+India&amp;ll=9.500805,76.35336&amp;spn=0.022961,0.05911&amp;output=embed"></iframe>
+                    <div id="map-container" class="z-depth-1"></div>
 
                 </div>
                 <div class=" contactCard glassBackground col-md-5">
@@ -311,31 +312,31 @@
                     </h5>
                     <hr>
                     <p class="sub-content">
-                        <i class="fa fa-ticket"></i>
+                        <i class="fa fa-ticket-alt"></i>
                         <strong> {{ 'location.thtitle1' | translate }} :</strong>
                         {{ 'location.thdata1' | translate }}</p>
                     <p class="sub-content">
-                        <i class="fa fa-ticket"></i>
+                        <i class="fa fa-ticket-alt"></i>
                         <strong> {{ 'location.thtitle2' | translate }} :</strong>
                         {{ 'location.thdata2' | translate }}</p>
                     <p class="sub-content">
-                        <i class="fa fa-ticket"></i>
+                        <i class="fa fa-ticket-alt"></i>
                         <strong> {{ 'location.thtitle3' | translate }} :</strong>
                         {{ 'location.thdata3' | translate }}</p>
                     <p class="sub-content">
-                        <i class="fa fa-ticket"></i>
+                        <i class="fa fa-ticket-alt"></i>
                         <strong> {{ 'location.thtitle4' | translate }} :</strong>
                         {{ 'location.thdata4' | translate }}</p>
                     <p class="sub-content">
-                        <i class="fa fa-ticket"></i>
+                        <i class="fa fa-ticket-alt"></i>
                         <strong> {{ 'location.thtitle5' | translate }} :</strong>
                         {{ 'location.thdata5' | translate }}</p>
                     <p class="sub-content">
-                        <i class="fa fa-ticket"></i>
+                        <i class="fa fa-ticket-alt"></i>
                         <strong> {{ 'location.thtitle6' | translate }} :</strong>
                         {{ 'location.thdata6' | translate }}</p>
                     <p class="sub-content">
-                        <i class="fa fa-ticket"></i>
+                        <i class="fa fa-ticket-alt"></i>
                         <strong> {{ 'location.thtitle7' | translate }} :</strong>
                         {{ 'location.thdata7' | translate }}</p>
                 </div>
@@ -409,7 +410,7 @@
             </div>
         </div>
     </div>
-    <div class="contentBox">
+    <div class="contentBox" id="contact-hotels">
         <h1 class="header">{{ 'hotels.mainhead' | translate }}</h1>
         <div class="pageContent container">
             <div class=" row justify-space-around">
@@ -548,7 +549,7 @@
                     <span>keralp[at]nic[dot]in</span>
                     <br>
                     <br>
-                     <div class="feedbackCard ">
+                    <div class="feedbackCard ">
                         <button (click)="OpenfeedbackForm()" type="button" class="btn btn-primary">{{ 'feedback.sendfeedback' | translate }}</button>
                     </div>
                 </div>
@@ -565,11 +566,17 @@
                 <li class="aboutListItem verticalListItem2">
                     <a href="#contact-wtc">{{ 'contact.head2' | translate }}</a>
                 </li>
+                <li class="aboutListItem verticalListItem4">
+                    <a href="#contact-committee">{{ 'committee.mainhead' | translate }}</a>
+                </li>
                 <li class="aboutListItem verticalListItem3">
                     <a href="#contact-location">{{ 'location.mainhead' | translate }}</a>
                 </li>
                 <li class="aboutListItem verticalListItem4">
                     <a href="#contact-dod">{{ 'dod.mainhead' | translate }}</a>
+                </li>
+                <li class="aboutListItem verticalListItem3">
+                    <a href="#contact-hotels">{{ 'hotels.mainhead' | translate }}</a>
                 </li>
                 <li class="aboutListItem verticalListItem4">
                     <a href="#contact-feedback">{{ 'feedback.mainhead' | translate }}</a>
