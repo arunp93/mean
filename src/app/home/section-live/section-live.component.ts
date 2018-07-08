@@ -25,6 +25,7 @@ export class SectionLiveComponent implements OnInit {
         // this.router.navigate(['login']);
       }
     });
+    console.log(this.news);
     $(document).ready(function() {
       let clock;
      // Grab the current date
@@ -75,10 +76,8 @@ export class SectionLiveComponent implements OnInit {
         }
     });
 
-    $('#myModal').on('shown.bs.modal', function () {
-      $('#myInput').trigger('focus');
-    });
-  }
-
-
+  //   $('#myModal').on('shown.bs.modal', function () {
+  //     $('#myInput').trigger('focus');
+  //   });
+   }
 }

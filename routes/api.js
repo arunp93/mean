@@ -11,7 +11,10 @@ var async = require('async');
 var crypto = require('crypto');
 var flash = require('express-flash');
 var nodemailer = require('nodemailer');
-
+var fs = require('file-system');
+var path = require('path');
+var assert = require('assert');
+var multer = require('multer');
 getToken = function (headers) {
   if (headers && headers.authorization) {
     var parted = headers.authorization.split(' ');
@@ -24,23 +27,32 @@ getToken = function (headers) {
     return null;
   }
 };
-// router.post('/signup', function(req, res) {
-//   if (!req.body.username || !req.body.password) {
-//     res.json({success: false, msg: 'Please pass username and password.'});
-//   } else {
-//     var newUser = new User({
-//       username: req.body.username,
-//       password: req.body.password
-//     });
-//     // save the user
-//     newUser.save(function(err) {
-//       if (err) {
-//         return res.json({success: false, msg: 'Username already exists.'});
-//       }
-//       res.json({success: true, msg: 'Successful created new user.'});
-//     });
-//   }
-// });
+const storage = multer.diskStorage({
+	destination: (req, file, cb) => {
+		cb(null, './src/uploads/');
+	},
+	filename: (req, file, cb) => {
+    cb(null, file.originalname);
+	}
+});
+var upload = multer({storage: storage}).single('file');
+router.post('/signup', function(req, res) {
+  if (!req.body.username || !req.body.password) {
+    res.json({success: false, msg: 'Please pass username and password.'});
+  } else {
+    var newUser = new User({
+      username: req.body.username,
+      password: req.body.password
+    });
+    // save the user
+    newUser.save(function(err) {
+      if (err) {
+        return res.json({success: false, msg: 'Username already exists.'});
+      }
+      res.json({success: true, msg: 'Successful created new user.'});
+    });
+  }
+});
 router.post('/signin', function(req, res) {
   User.findOne({
     username: req.body.username
@@ -67,22 +79,46 @@ router.post('/signin', function(req, res) {
 router.post('/news', passport.authenticate('jwt', { session: false}), function(req, res) {
   var token = getToken(req.headers);
   if (token) {
-    console.log(req.body);
-    var newNews = new News({
-      date: req.body.date,
-      title: req.body.title,
-      description: req.body.description
-    });
+    upload(req, res, function (err) {
+      if (err) {
+        // An error occurred when uploading
+        console.log(err);
+        return res.status(422).send("an Error occured")
+      }  
+     // No error occured.
+     console.log(req)
+     if(req.file){
+       console.log('in file')
+    var newNews = new News;
+    newNews.date = req.body.date;
+    newNews.title = req.body.title;
+    newNews.description = req.body.description;
+    newNews.file = req.file.path;
+
     newNews.save(function(err) {
       if (err) {
+        console.log(err);
         return res.json({success: false, msg: 'Save news failed.'});
       }
       res.json({success: true, msg: 'Successful created new news.'});
     });
   } else {
-    return res.status(403).send({success: false, msg: 'Unauthorized.'});
+    console.log('out file')
+    var newNews = new News;
+    newNews.date = req.body.date;
+    newNews.title = req.body.title;
+    newNews.description = req.body.description;
+    newNews.save(function(err) {
+      if (err) {
+        console.log(err);
+        return res.json({success: false, msg: 'Save news failed.'});
+      }
+      res.json({success: true, msg: 'Successful created new news.'});
+    });
   }
-});
+}); 
+}});
+
 router.get('/news', passport.authenticate('jwt', { session: false}), function(req, res) {
   var token = getToken(req.headers);
   if (token) {
@@ -112,6 +148,18 @@ router.get('/news/:id', passport.authenticate('jwt', { session: false}), functio
   } else {
     return res.status(403).send({success: false, msg: 'Unauthorized.'});
   }
+});
+router.get('/modal/:id', function(req, res, next) {
+    News.findById(req.params.id, function (err, post) {
+      if (err) return next(err);
+      res.json(post);
+    });
+});
+router.get('/modall/:id', function(req, res, next) {
+  News.findById(req.params.id, function (err, news) {
+    if (err) console.log(err);
+    res.json(news.file);
+  });
 });
 
 router.delete('/news/:id',passport.authenticate('jwt', { session: false}), function(req, res, next) {

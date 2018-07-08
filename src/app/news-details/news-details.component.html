@@ -1,15 +1,15 @@
 <div class="container">
-    <h1>{{ news.title }}</h1>
+    <h1>{{ news.title }}</h1><hr>
     <dl class="list">
       <dt>Date</dt>
       <dd>{{ news.date}}</dd>
       <dt>Description</dt>
       <dd>{{ news.description }}</dd>
-    </dl>
+    </dl><hr>
   </div>
   <div class="row">
-    <div class="col-md-12">
-      <a [routerLink]="['/news-edit', news._id]" class="btn btn-success">EDIT</a>
+    <div class="col-md-12 d-flex justify-content-center">
+      <a [routerLink]="['/news-edit', news._id]" class="btn btn-success">EDIT</a>&nbsp;
       <button class="btn btn-danger" type="button" (click)="deleteNews(news._id)">DELETE</button>
     </div>
   </div>

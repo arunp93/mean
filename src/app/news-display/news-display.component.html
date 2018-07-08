@@ -1,7 +1,7 @@
-<div class="container">
-    <h1>News List <button class="btn btn-success" (click)="logout()">Logout</button></h1>
+<div class="container news">
+    <h1>News List <button class="btn btn-danger" (click)="logout()">Logout</button></h1>
     <a [routerLink]="['/news-create']" class="btn btn-default btn-lg">
-      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+      <span class="btn btn-success" aria-hidden="true">Create News</span></a>
     <table class="table">
       <thead>
         <tr>
@@ -14,7 +14,7 @@
         <tr *ngFor="let news of news">
           <td>{{ news.date }}</td>
           <td>{{ news.title }}</td>
-          <td>{{ news.description }}</td>
+          <td class="desctd">{{ news.description }}</td>
           <td><a [routerLink]="['/news-details', news._id]">Show Detail</a></td>
         </tr>
       </tbody>

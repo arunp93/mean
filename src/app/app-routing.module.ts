@@ -15,7 +15,7 @@ import { NewsDetailsComponent } from './news-details/news-details.component';
 import { NewsEditComponent } from './news-edit/news-edit.component';
 import { ResetComponent } from './reset/reset.component';
 import { ForgotComponent } from './forgot/forgot.component';
-
+import { ModalboxComponent } from './home/modalbox/modalbox.component';
 const routes: Routes = [
   {
     path: '',
@@ -50,6 +50,11 @@ const routes: Routes = [
     data: { title: 'Login' }
   },
   {
+    path: 'signup',
+    component: SignupComponent,
+    data: { title: 'Signup' }
+  },
+  {
     path: 'news-create',
     component: NewsCreateComponent,
     data: { title: 'Create News' }
@@ -79,13 +84,18 @@ const routes: Routes = [
        }
   ,
   {
+    path: 'modalbox/:id',
+    component: ModalboxComponent,
+    data: { title: 'Modalbox' }
+  },
+  {
     path: '**',
     redirectTo: '/home'
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes )],
+  imports: [RouterModule.forRoot(routes, {useHash : true} )],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
