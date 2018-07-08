@@ -1,25 +1,20 @@
 .page-about {
   width: 100%;
+  height: 100%;
   padding-top: 80px;
-  display: flex;
-  flex-flow: row nowrap;
   background-image: url("/assets/bg-about.jpg");
-  background-size: cover;
+  background-size: 100vw 100vh;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 
-  .contentBasediv {
-    width: 75%;
-    @media screen and (max-width: 1279px) {
-      width: 100%;
-    }
-
-    .contentContainer {
-      height: 100%;
-      overflow: scroll;
 
       .contentBox {
-        margin-top: 80px;
-        min-height: 100%;
+        padding-top: 75px;
+        width: 75%;
+        @media (max-width:767px){
+          width: 100%;
+        }
+        min-height: 100vh;
         display: flex;
         flex-flow: column nowrap;
         justify-content:center;
@@ -50,7 +45,7 @@
             border: 1px solid rgba(21, 21, 30, 0.7);
             box-shadow: 0px 0px 10px rgb(0, 0, 0);
             p {
-              font-size: 1.2em;
+              font-size: 1em;
               margin-bottom: 5px;
               color: rgb(255, 255, 255);
               font-weight: 600;
@@ -142,16 +137,19 @@
           text-align: center
         }
       }
-    }
-  }
+
 
   .navContainer {
     width: 25%;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 0;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-content: flex-end;
-    @media screen and (max-width: 1279px) {
+    @media screen and (max-width: 1279px){
       width: 0px;
     }
 
@@ -174,11 +172,19 @@
 
     .aboutListItem {
       padding: 20px;
+      .selected{
+        color: #43cea2 !important;
+      }
+      
       a{
         color: #fff;
         text-decoration: none;
       }
     }
+   
 
   }
+}
+.selected{
+  color: #43cea2 !important;
 }

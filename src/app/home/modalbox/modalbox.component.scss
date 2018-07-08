@@ -1,9 +1,15 @@
 .container{
-    background-color:rgba(24, 22, 18, 0.151);
-    margin-top:100px;
-    .box{
-        min-height:60%;
-        padding:5%;
-        border-radius:50px;
-    }
+  background: #15151e;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #20202e, #2d3042, #15151e);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #20202e, #2d3042, #15151e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */;
+    padding-top:100px;
+    margin:0px;
+    min-height:100vh;
+    width:100vw;
+}
+.box{
+    background-color: white;
+    min-height:60%;
+    padding:5%;
+    border-radius:50px;
 }

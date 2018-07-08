@@ -1,72 +1,66 @@
-.page-about{
+.page-about {
   width: 100%;
   padding-top: 80px;
-  display: flex;
-  flex-flow: row nowrap;
-  background-image: url('/assets/bg-about.jpg');
-  background-size: cover;
+  height: 100%;
+  position: relative;
+  background-image: url("/assets/bg-about.jpg");
+  background-size: 100vw 100vh;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 
-  .contentBasediv{
-    position: relative;
+  .contentBox {
     width: 75%;
-    @media screen and (max-width: 1279px){
+    @media (max-width: 767px) {
       width: 100%;
     }
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
 
-    .contentContainer{
-      height: 100%;
-      overflow: scroll;
-
-      .contentBox{
-        margin-top: 80px;
-        min-height: 100%;
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: center;
-
-        .headerAboutContent{
-          color: #fff;
-          padding-left: 25px;
-        }
-
-        .pageContent{
-          height: 80%;
-          margin: 25px 20px;
-          @media screen and (max-width:768px) {
-            margin: 15px 20px;
-          }
-
-          .aboutContentText{
-            text-justify: inter-word;
-            text-align: justify;
-            font-size: 1.2em;
-          }
-        }
-        }
+    .headerAboutContent {
+      color: #fff;
+      padding-left: 25px;
     }
-    
+
+    .pageContent {
+      height: 80%;
+      margin: 25px 20px;
+      @media screen and (max-width: 768px) {
+        margin: 15px 20px;
+      }
+
+      .aboutContentText {
+        text-justify: inter-word;
+        text-align: justify;
+        font-size: 1em;
+      }
+    }
   }
 
-  .navContainer{
+  .navContainer {
     width: 25%;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 0;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-content: flex-end;
-    @media screen and (max-width: 1279px){
+    @media screen and (max-width: 1279px) {
       width: 0px;
     }
 
-    .verticalNav{
+    .verticalNav {
       height: 50vh;
+
       display: flex;
       flex-flow: column nowrap;
       justify-content: center;
     }
 
-    .aboutList{
-
+    .aboutList {
       display: flex;
       width: 250px;
       flex-flow: column nowrap;
@@ -76,16 +70,23 @@
       margin-bottom: 0px;
     }
 
-    .aboutListItem{
+    .aboutListItem {
       padding: 20px;
+      .selected{
+        color: #43cea2 !important;
+      }
       
-      a{
+      a {
         color: #fff;
         text-decoration: none;
       }
     }
 
-    .downloadButton{
+    .activeverticalnav a {
+      color: #185a9d !important;
+    }
+
+    .downloadButton {
       background: linear-gradient(-45deg, #185a9d, #43cea2);
       cursor: pointer;
       width: 250px;
@@ -93,4 +94,10 @@
       border: 0px;
     }
   }
+}
+#aboutNavigation ul li {
+  position: relative;
+}
+.selected{
+  color: #43cea2 !important;
 }

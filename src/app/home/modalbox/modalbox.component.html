@@ -7,8 +7,8 @@
     <dt>Description</dt>
     <dd>{{ news.description }}</dd>
     <dt>Attachments</dt>
-    <dd>	<form (ngSubmit)="down(news._id)" #modalForm="ngForm">
-          <button type="submit" class="btn btn-nprimary">Download</button>
+    <dd><form (ngSubmit)="down(news._id)" #modalForm="ngForm">
+          <button type="submit" class="btn btn-outline-info">Download</button>
        </form></dd>
   </dl><hr>
   <button class="btn btn-primary" routerLink = '/home'>Back</button>

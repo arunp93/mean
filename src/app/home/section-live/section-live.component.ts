@@ -46,35 +46,30 @@ export class SectionLiveComponent implements OnInit {
              checktime();
            }, 1000);
          }
-      if (diff <= 0) {
-        // If remaining countdown is 0
-        clock = $('.clock').FlipClock(0, {
-          clockFace: 'DailyCounter',
-          countdown: true,
-          autostart: false,
-          callbacks: {
-            stop: function() {
-              console.log('haha');
+         if (diff <= 0) {
+          // If remaining countdown is 0
+          $('#watchLiveText').html('Click the play button');
+          $('.countr').hide();
+          $('#watchliveLink').show();
+          } else {
+          // Run countdown timer
+          clock = $('.clock').FlipClock(diff, {
+            clockFace: 'DailyCounter',
+            countdown: true,
+            callbacks: {
+              stop: function() {
+                $('#watchLiveText').html('Click the play button');
+                $('.countr').hide();
+                $('#watchliveLink').show();
+              }
             }
+          });
+           // Check when timer reaches 0, then stop at 0
+           setTimeout(function() {
+            checktime();
+          }, 1000);
           }
-        });
-        } else {
-        // Run countdown timer
-        clock = $('.clock').FlipClock(diff, {
-          clockFace: 'DailyCounter',
-          countdown: true,
-          callbacks: {
-            stop: function() {
-              $('.message').html('The clock has stopped!');
-            }
-          }
-        });
-         // Check when timer reaches 0, then stop at 0
-         setTimeout(function() {
-          checktime();
-        }, 1000);
-        }
-    });
+      });
 
   //   $('#myModal').on('shown.bs.modal', function () {
   //     $('#myInput').trigger('focus');

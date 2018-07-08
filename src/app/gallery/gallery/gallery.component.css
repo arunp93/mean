@@ -6,7 +6,7 @@
   background-image: url('/assets/bg-about.jpg');
   width:100vw;
   height:100vh;
-  padding-top:70px;
+  padding-top:100px;
   /* background-image: url("../../../assets/Nehru-Trophy-Boat-Race.jpg"); */
   background-size:cover;
 }
@@ -203,7 +203,7 @@ ul.dm{
 
   .galo{
 
-    padding-top:20px;
+    padding-top:70px;
   
   }
 
@@ -255,6 +255,9 @@ ul.dm{
       padding:0px;
      
   }
+  .img-responsive{
+    max-width: 80px!important;
+  }
 
 }
   @media screen and (min-width: 421px) and (max-width:1024px) {
@@ -290,6 +293,9 @@ ul.dm{
       .ditems{
         font-size:10px;
         padding:0px;
+    }
+    .img-responsive{
+      max-width: 80px!important;
     }
   
 }
