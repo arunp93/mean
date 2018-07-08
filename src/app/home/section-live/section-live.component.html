@@ -1,8 +1,7 @@
 <div class="fullpage-view pagelive">
-    <div class=" container-fluid">
       <div class="row">
   
-        <div class="col-lg-8 col-sm-12 col-md-12" id="topdiv1">
+        <div class="col-lg-8 col-sm-12 col-md-12 topdiv1" id="topdiv1">
           <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
               <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -19,7 +18,7 @@
                 </div>
               </div>
               <div class="carousel-item">
-                <img class="d-block w-100 " src="/assets/carousel/img2.jpg" alt="Second slide">
+                <img class="d-block w-100" src="/assets/carousel/img2.jpg" alt="Second slide">
                 <div class="carousel-caption d-none d-md-block blackoverlay">
                   <h5>...</h5>
                   <p>...</p>
@@ -44,8 +43,8 @@
           </div>
         </div>
   
-        <div class="col-lg-4 col-sm-12 col-md-12 topdiv3 glassBackgroundBlue">
-          <h2>News Feed</h2>
+        <div class="col-lg-4 col-sm-12 col-md-12 topdiv3">
+          <h3>{{ 'home2.news' | translate }}</h3>
           <div>
   
             <ul class="list-group">
@@ -54,8 +53,8 @@
               <li class="list-group-item list-group-item-light" data-toggle="modal" data-target="#exampleModalCenter" *ngFor="let news of news"
                 [routerLink]="['/modalbox', news._id]">
                 <span class="date">{{ news.date }}</span>
-                <h3>{{ news.title }}</h3>
-                <p>{{ news.description }}</p>
+                <h4>{{ news.title }}</h4>
+                <p>{{ news.description }}<i class="fas fa-long-arrow-alt-right"></i></p>
                 <!-- <a >Show Detail</a>    -->
               </li>
   
@@ -95,10 +94,10 @@
   
       <div class="col-lg-12 counter">
   
-        <h2>Watch
-          <span class="lv">LIVE</span>
+        <h2>{{ 'home2.watch' | translate }}
+          <span class="lv">{{ 'home2.live' | translate }}</span>
         </h2>
-        <p id="watchLiveText">Link will be updated on event date. Stay tuned!!!</p>
+        <p id="watchLiveText">{{ 'home2.link' | translate }}</p>
         <div id="watchliveLink">
           <a href="http://webcast.gov.in/nehrutrophy/" class="btn btn-info btn-lg" target="_blank" onClick="return confirm('Do you want to leave')">
             <span class="glyphicon glyphicon-play"></span> Play
@@ -109,6 +108,5 @@
   
         </div>
       </div>
-    </div>
   
   </div>
