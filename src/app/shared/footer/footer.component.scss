@@ -70,7 +70,7 @@ text-decoration: none;
 }
 
 .foottext{
-	font-size:11px;
+	font-size:.7em;
 	color:#787878;
 	font-family:raleway;
 
@@ -173,9 +173,9 @@ text-decoration: none;
         padding:0px;
         }
         .foottext{
-            font-size:11px;
+            font-size:.7em;
             margin:0px;
-            line-height:1.2em;
+            line-height:1.1em;
         
         }
         
@@ -212,11 +212,11 @@ text-decoration: none;
     .footlinks{
 
     
-        font-size:.7em;
+        font-size:.8em;
         padding:0px;
         }
         .foottext{
-            font-size:10px;
+            font-size:.6em;
             
         
         }
@@ -230,7 +230,6 @@ text-decoration: none;
 @media screen and (width:768px){
     .footer{
         padding-top:300px;
-        font-size:1.5em!important;
     }
 
 }

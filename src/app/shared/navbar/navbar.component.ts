@@ -28,7 +28,7 @@ export class NavbarComponent implements OnInit {
       // Increase Font Size
       $('#sizeup').click(function(){
      let currentSize = $('body').css('font-size');
-     currentSize = parseFloat(currentSize) * 1.2;
+     currentSize = parseFloat(currentSize) * 1.1;
      $('body').css('font-size', currentSize);
      return false;
       });
@@ -36,15 +36,15 @@ export class NavbarComponent implements OnInit {
       $('#sizedown').click(function(){
      const currentFontSize = $('body').css('font-size');
      let currentSize = $('body').css('font-size');
-     currentSize = parseFloat(currentSize) * 0.8;
+     currentSize = parseFloat(currentSize) * 0.9;
      $('body').css('font-size', currentSize);
      return false;
       });
    });
   }
   useLanguage(language: string) {
-    console.log('clicked' +   this.translate.use(language) + ' lan:' + language);
         this.translate.use(language);
+        $(this).toggleClass('nav-active');
       }
 
 }

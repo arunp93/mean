@@ -3,7 +3,10 @@
     .page-accordion{
     
       height: 120vw;
-      background-color: transparent;
+      background: #15151e;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #20202e, #2d3042, #15151e);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #20202e, #2d3042, #15151e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      
     
     }
     }
@@ -50,8 +53,7 @@
       }
       #myBtn{
         a{
-          padding: 5px;
-          background-color: #151511;
+          padding: 5px 10px;
         }
       }
       .textbox{
@@ -61,7 +63,7 @@
       .accordion-container{
         width: 100%;  
         padding-top: 30px;
-        min-height: 450px;
+        max-height:60vh
     
       }
       .accordion{
@@ -124,7 +126,7 @@
       }
       .year{
         padding-top: 10px;
-        font-size: 1.5em;
+        font-size: 1.2em;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -134,7 +136,7 @@
       .Coming_Soon{
         padding: 100px 30px;
         text-align: center;
-        font-size: 1.5em;
+        font-size: 1.2em;
       }
       .activetabs .year{
     
@@ -142,7 +144,7 @@
         font-weight: 700;
       }
       .contents .first{
-        font-size: 1.2em;
+        font-size: 1em;
       }
       .winners{
         display: flex;
@@ -156,7 +158,7 @@
         padding: 0;
         margin: 0;
         width: 100%;
-        height:246px;
+        height:180px;
         background-image: url('/assets/img/2016/thumb/2016-07-22-01.jpg');
         background-repeat: no-repeat;
         background-position: center;
@@ -183,14 +185,14 @@
       /* MOBILE_480 */
       @media screen and (max-width:480px){
         .page-accordion{
-          height: 100vh;;
+          height: 120vh;
         }
         .accordion-container{
-          height: 40vh;
+          height: 50vh;
         
         }
         .winnerimg{
-          max-height: 150px;
+          max-height: 100px;
         }
         .accordion{
           width: 220vw;
@@ -217,7 +219,6 @@
         }
         
         .accordion-container{
-          min-height: 350px;
           overflow-x: scroll;
         }
         .accordion{

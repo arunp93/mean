@@ -61,7 +61,6 @@ export class SectionLiveComponent implements OnInit {
                 $('#watchLiveText').html('Click the play button');
                 $('.countr').hide();
                 $('#watchliveLink').show();
-  
               }
             }
           });
