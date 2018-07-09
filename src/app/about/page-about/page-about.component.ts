@@ -8,10 +8,11 @@ declare const $: any;
 export class PageAboutComponent implements OnInit {
   constructor() {}
   downloadPDFeng() {
-    window.open('assets/about-pdf/about-pdf-eng.pdf');
+    window.location.href = '/assets/aboutpdf/about-pdf-eng.pdf';
   }
   downloadPDFmal() {
-    window.open('assets/about-pdf/about-pdf-mal.pdf');
+    window.location.href = '/assets/aboutpdf/about-pdf-mal.pdf';
+
   }
   ngOnInit() {
     $(document).ready(function() {

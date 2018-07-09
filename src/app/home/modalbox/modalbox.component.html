@@ -3,7 +3,7 @@
   <h1>{{ news.title }}</h1><hr>
   <dl class="list">
     <dt>Date</dt>
-    <dd>{{ news.date}}</dd>
+    <dd>{{ news.date | date:'longDate'}}</dd>
     <dt>Description</dt>
     <dd>{{ news.description }}</dd>
     <dt>Attachments</dt>

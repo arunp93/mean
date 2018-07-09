@@ -22,7 +22,7 @@ getToken = function (headers) {
 };
 const storage = multer.diskStorage({
 	destination: (req, file, cb) => {
-		cb(null, './src/uploads/');
+		cb(null, './uploads/');
 	},
 	filename: (req, file, cb) => {
     cb(null, file.originalname);
@@ -79,7 +79,6 @@ router.post('/news', passport.authenticate('jwt', { session: false}), function(r
         return res.status(422).send("an Error occured")
       }  
      // No error occured.
-     console.log(req)
      if(req.file){
        console.log('in file')
     var newNews = new News;
@@ -115,7 +114,7 @@ router.post('/news', passport.authenticate('jwt', { session: false}), function(r
 router.get('/news', passport.authenticate('jwt', { session: false}), function(req, res) {
   var token = getToken(req.headers);
   if (token) {
-    News.find(function (err, news) {
+    News.find({}).sort({date: -1}).exec(function (err, news) {
       if (err) return next(err);
       res.json(news);
     });
@@ -125,7 +124,7 @@ router.get('/news', passport.authenticate('jwt', { session: false}), function(re
 });
 router.get('/newsfeeds', function(req, res) {
     console.log('data asked');
-    News.find(function (err, news) {
+    News.find({}).sort({date: -1}).exec(function (err, news) {
       if (err) return next(err);
       res.json(news);
     });

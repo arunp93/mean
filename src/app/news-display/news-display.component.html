@@ -12,7 +12,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let news of news">
-          <td>{{ news.date }}</td>
+          <td>{{ news.date | date:'longDate' }}</td>
           <td>{{ news.title }}</td>
           <td class="desctd">{{ news.description }}</td>
           <td><a [routerLink]="['/news-details', news._id]">Show Detail</a></td>

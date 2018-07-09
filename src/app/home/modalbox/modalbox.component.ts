@@ -25,10 +25,15 @@
           });
         }
         down(id) {
-          var path;
+          let path;
           this.http.get('/api/modall/' + id).subscribe(data => {
             path = data;
-            window.location.href = '/assets/uploads/about-pdf.pdf'
+            if (path) {
+              alert('Downloading' + path);
+            window.location.href = path;
+            } else {
+              alert('No attachments');
+            }
           }, err => {
             if (err.status === 401) {
               this.router.navigate(['home']);

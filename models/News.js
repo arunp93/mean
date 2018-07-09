@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var NewsSchema = new Schema({
+
   date : { type :Date,
           required:true
         },

@@ -30,6 +30,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 console.log('success');
 app.use(express.static(path.join(__dirname, 'dist')));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use('/news', express.static(path.join(__dirname, 'dist')));
 app.use('/api', api);
 // catch 404 and forward to error handler

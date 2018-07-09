@@ -19,7 +19,6 @@ export class NewsDisplayComponent implements OnInit {
     };
     this.http.get('/api/news', httpOptions).subscribe(data => {
       this.news = data;
-      console.log(this.news);
     }, err => {
       if (err.status === 401) {
         this.router.navigate(['login']);
