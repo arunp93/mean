@@ -48,7 +48,7 @@ const routes: Routes = [
     data: { title: 'News List' }
   },
   {
-    path: 'login',
+    path: '52CifiEDhptF5dde3jOq',
     component: LoginComponent,
     data: { title: 'Login' }
   },
@@ -98,7 +98,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {useHash: true} )],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}

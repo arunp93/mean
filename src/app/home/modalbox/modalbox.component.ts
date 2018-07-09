@@ -29,8 +29,9 @@
           this.http.get('/api/modall/' + id).subscribe(data => {
             path = data;
             if (path) {
-              alert('Downloading' + path);
-            window.location.href = path;
+              if (confirm('This link shall take you to a page/website outside this website. ')) {
+                window.open(path);
+              }
             } else {
               alert('No attachments');
             }

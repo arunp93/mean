@@ -1,8 +1,8 @@
-.container{
+.containerbox{
   background: #15151e;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #20202e, #2d3042, #15151e);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #20202e, #2d3042, #15151e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */;
-    padding-top:100px;
+    padding:100px 5%;
     margin:0px;
     min-height:100vh;
     width:100vw;

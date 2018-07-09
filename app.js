@@ -31,7 +31,12 @@ app.use(passport.session());
 console.log('success');
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-app.use('/news', express.static(path.join(__dirname, 'dist')));
+app.use('/home', express.static(path.join(__dirname, 'dist')));
+app.use('/about', express.static(path.join(__dirname, 'dist')));
+app.use('/contact', express.static(path.join(__dirname, 'dist')));
+app.use('/gallery', express.static(path.join(__dirname, 'dist')));
+app.use('/52CifiEDhptF5dde3jOq', express.static(path.join(__dirname, 'dist')));
+// app.use('/news', express.static(path.join(__dirname, 'dist')));
 app.use('/api', api);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -8,11 +8,14 @@ declare const $: any;
 export class PageAboutComponent implements OnInit {
   constructor() {}
   downloadPDFeng() {
-    window.location.href = '/assets/aboutpdf/about-pdf-eng.pdf';
+    if (confirm('This link shall take you to a page/website outside this website')) {
+      window.open('assets/aboutpdf/about-pdf-eng.pdf');
+    }
   }
   downloadPDFmal() {
-    window.location.href = '/assets/aboutpdf/about-pdf-mal.pdf';
-
+    if (confirm('This link shall take you to a page/website outside this website. ')) {
+    window.open('/assets/aboutpdf/about-pdf-mal.pdf');
+  }
   }
   ngOnInit() {
     $(document).ready(function() {
@@ -46,16 +49,19 @@ export class PageAboutComponent implements OnInit {
 
     function onScroll(event) {
       const scrollPos = $(document).scrollTop();
-      $('#aboutNavigation a').each(function () {
-          const currLink = $(this);
-          const refElement = $(currLink.attr('href'));
-          if (refElement.position().top - 100 <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
-              $('#aboutNavigation ul li a').removeClass('selected');
-              currLink.addClass('selected');
-          }else {
-              currLink.removeClass('selected');
-          }
+      $('#aboutNavigation a').each(function() {
+        const currLink = $(this);
+        const refElement = $(currLink.attr('href'));
+        if (
+          refElement.position().top - 100 <= scrollPos &&
+          refElement.position().top + refElement.height() > scrollPos
+        ) {
+          $('#aboutNavigation ul li a').removeClass('selected');
+          currLink.addClass('selected');
+        } else {
+          currLink.removeClass('selected');
+        }
       });
-  }
+    }
   }
 }
