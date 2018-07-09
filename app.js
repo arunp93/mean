@@ -30,6 +30,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 console.log('success');
 app.use(express.static(path.join(__dirname, 'dist')));
+app.use('/assets', express.static(path.join(__dirname, 'dist/assets')));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use('/home', express.static(path.join(__dirname, 'dist')));
 app.use('/about', express.static(path.join(__dirname, 'dist')));
