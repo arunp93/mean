@@ -8,6 +8,7 @@
           <th>date</th>
           <th>title</th>
           <th>description</th>
+          <th>Attachment</th>
         </tr>
       </thead>
       <tbody>
@@ -15,6 +16,7 @@
           <td>{{ news.date | date:'longDate' }}</td>
           <td>{{ news.title }}</td>
           <td class="desctd">{{ news.description }}</td>
+          <td>{{ news.file }}</td>
           <td><a [routerLink]="['/news-details', news._id]">Show Detail</a></td>
         </tr>
       </tbody>

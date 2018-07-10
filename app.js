@@ -1,16 +1,12 @@
 var express = require('express');
 var path = require('path');
-var favicon = require('serve-favicon');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
-var morgan = require('morgan');
 var mongoose = require('mongoose');
 var passport = require('passport');
 var config = require('./config/database');
 var session = require('express-session');
 var flash = require('express-flash');
-var nodemailer = require('nodemailer');
-
 var api = require('./routes/api');
 var app = express();
 mongoose.Promise = require('bluebird');
@@ -25,7 +21,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended':'false'}));
 app.use(session({ secret: 'session secret key' }));
 app.use(flash());
-
 app.use(passport.initialize());
 app.use(passport.session());
 console.log('success');

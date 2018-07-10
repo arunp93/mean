@@ -9,13 +9,15 @@ var router = express.Router();
 var User = require("../models/User");
 var News = require("../models/News");
 var multer = require('multer');
-// var MAGIC_NUMBER = {
-// 	pdf: '25504446'
-// }
-// function checkMagicNumbers(magic) {
-//   if (magic == MAGIC_NUMBER.pdf) 
-//    return true;
-// }
+var fs = require('fs');
+var sanitize = require('mongo-sanitize');
+var MAGIC_NUMBER = {
+	pdf: '25504446'
+}
+function checkMagicNumbers(magic) {
+  if (magic == MAGIC_NUMBER.pdf) 
+   return true;
+}
 getToken = function (headers) {
   if (headers && headers.authorization) {
     var parted = headers.authorization.split(' ');
@@ -55,8 +57,10 @@ router.post('/signup', function(req, res) {
   }
 });
 router.post('/signin', function(req, res) {
+  var cleanUser = sanitize(req.body.username);
+  var cleanPass = sanitize(req.body.password);
   User.findOne({
-    username: req.body.username
+    username: cleanUser
   }, function(err, user) {
     if (err) throw err;
 
@@ -64,7 +68,7 @@ router.post('/signin', function(req, res) {
       res.status(401).send({success: false, msg: 'Authentication failed. User not found.'});
     } else {
       // check if password matches
-      user.comparePassword(req.body.password, function (err, isMatch) {
+      user.comparePassword(cleanPass, function (err, isMatch) {
         if (isMatch && !err) {
           // if user is found and password is right create a token
           var token = jwt.sign(user.toJSON(), config.secret);
@@ -88,10 +92,8 @@ router.post('/news', passport.authenticate('jwt', { session: false}), function(r
       }  
      // No error occured.
      if(req.file){
-      //  console.log(req.file)
-      // var bitmap = req.file.filename.toString('hex', 0, 4);
-      // console.log('hello' + bitmap)
-      // if (checkMagicNumbers(bitmap)) 
+      var bitmap = fs.readFileSync('./uploads/' + req.file.filename).toString('hex', 0, 4);
+      if (checkMagicNumbers(bitmap)) {
     var newNews = new News;
     newNews.date = req.body.date;
     newNews.title = req.body.title;
@@ -105,12 +107,18 @@ router.post('/news', passport.authenticate('jwt', { session: false}), function(r
       }
       res.json({success: true, msg: 'Successful created new news.'});
     });
+  } else 
+  { 
+    fs.unlinkSync('./uploads/' + req.file.filename);
+    return res.json({success: true, msg: 'NOT PDF'});
+}
   
   } else {
     var newNews = new News;
     newNews.date = req.body.date;
     newNews.title = req.body.title;
     newNews.description = req.body.description;
+    newNews.file = 'No Attachments';
     newNews.save(function(err) {
       if (err) {
         console.log(err);
