@@ -12,10 +12,13 @@ body {
 
 
 
-.mb-450 {
-  margin-bottom: 498px;
-  @media (max-width: 480px) {
+.mb-bottom-page {
+  margin-bottom: 600px;
+  @media (max-width: 768px) {
     margin-bottom: 100vh;
+  }
+  @media (max-width: 480px) {
+    margin-bottom: 150vh;
   }
 }
 .pb-450 {

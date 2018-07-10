@@ -18,3 +18,9 @@ export class AppComponent {
       this.translate.use(language);
     }
 }
+
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}

@@ -29,7 +29,6 @@ export class NewsCreateComponent implements OnInit {
       formData.append('title', this.news.title);
       formData.append('description', this.news.description);
     this.http.post('/api/news', formData , httpOptions).subscribe(resp => {
-      console.log(resp);
       this.router.navigate(['news']);
     }, err => {
       this.message = err.error.msg;

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { $ } from 'protractor';
 
 @Component({
   selector: 'app-footer',
@@ -13,6 +14,11 @@ export class FooterComponent implements OnInit {
   }
 
   ngOnInit() {
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+  }
+
 
     }
 

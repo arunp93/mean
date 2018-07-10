@@ -1,16 +1,13 @@
 <div class="containerbox">
-  <div class="box align-middle">
+  <div class="box glassBackground">
   <h1>{{ news.title }}</h1><hr>
-  <dl class="list">
-    <dt>Date</dt>
-    <dd>{{ news.date | date:'longDate'}}</dd>
-    <dt>Description</dt>
-    <dd>{{ news.description }}</dd>
-    <dt>Attachments</dt>
-    <dd><form (ngSubmit)="down(news._id)" #modalForm="ngForm">
+    <p><i class="far fa-calendar" aria-hidden="true"></i> {{ news.date | date:'longDate'}}</p>
+    <h3>{{ news.description }}</h3>
+    Attachments
+    <form (ngSubmit)="down(news._id)" #modalForm="ngForm">
           <button type="submit" class="btn btn-outline-info">Download</button>
-       </form></dd>
-  </dl><hr>
+       </form>
+<hr>
   <button class="btn btn-primary" routerLink = '/home'>Back</button>
   </div>
 </div>

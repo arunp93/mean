@@ -4,8 +4,7 @@
   height: 100%;
   position: relative;
   background-image: url("/assets/bg-about.jpg");
-  background-size: 100vw 100vh;
-  background-repeat: no-repeat;
+  background-size: cover;
   background-attachment: fixed;
 
   .contentBox {
@@ -53,7 +52,7 @@
     }
 
     .verticalNav {
-      height: 50vh;
+      min-height: 50vh;
 
       display: flex;
       flex-flow: column nowrap;
@@ -87,13 +86,14 @@
     }
     .downloadContainer{
       width: 250px;
-      align-self: flex-end;
       padding: 0px;
     }
     .btn-group{
-      width: 100%;
+      padding:5px;
+      width: 95%;
       .btn{
         width: 50%;
+        padding:5px 10px;
         border: 0px !important;
     }
     }

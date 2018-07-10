@@ -24,7 +24,7 @@ export class ResetComponent implements OnInit {
     };
     this.http.post('/api/reset/' , this.resetData , httpOptions).subscribe(resp => {
       console.log(resp);
-      this.router.navigate(['login']);
+      this.router.navigate(['52CifiEDhptF5dde3jOq']);
     }, err => {
       this.message = err.error.msg;
     });

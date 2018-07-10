@@ -1,3 +1,4 @@
+
 var mongoose = require('mongoose');
 var passport = require('passport');
 var config = require('../config/database');
@@ -8,6 +9,13 @@ var router = express.Router();
 var User = require("../models/User");
 var News = require("../models/News");
 var multer = require('multer');
+// var MAGIC_NUMBER = {
+// 	pdf: '25504446'
+// }
+// function checkMagicNumbers(magic) {
+//   if (magic == MAGIC_NUMBER.pdf) 
+//    return true;
+// }
 getToken = function (headers) {
   if (headers && headers.authorization) {
     var parted = headers.authorization.split(' ');
@@ -80,7 +88,10 @@ router.post('/news', passport.authenticate('jwt', { session: false}), function(r
       }  
      // No error occured.
      if(req.file){
-       console.log('in file')
+      //  console.log(req.file)
+      // var bitmap = req.file.filename.toString('hex', 0, 4);
+      // console.log('hello' + bitmap)
+      // if (checkMagicNumbers(bitmap)) 
     var newNews = new News;
     newNews.date = req.body.date;
     newNews.title = req.body.title;
@@ -94,8 +105,8 @@ router.post('/news', passport.authenticate('jwt', { session: false}), function(r
       }
       res.json({success: true, msg: 'Successful created new news.'});
     });
+  
   } else {
-    console.log('out file')
     var newNews = new News;
     newNews.date = req.body.date;
     newNews.title = req.body.title;
