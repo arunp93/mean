@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 // import * as $ from 'jquery'
 // import * as $ from 'jquery';
 declare var $ ;
-declare var moment;
+const moment = require('moment-timezone');
 @Component({
   selector: 'app-section-live',
   templateUrl: './section-live.component.html',
@@ -17,23 +17,24 @@ export class SectionLiveComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
+    $('img:not([alt])').attr('alt', 'NTBR Image');
+
     this.http.get('/api/newsfeeds').subscribe(data => {
       this.news = data;
       console.log(this.news);
     }, err => {
       if (err.status === 401) {
-        // this.router.navigate(['login']);
       }
     });
     $(document).ready(function() {
       let clock;
      // Grab the current date
       const currentDate = new Date();
-      moment.tz.add('Asia/Calcutta|HMT BURT IST IST|-5R.k -6u -5u -6u|01232|-18LFR.k 1unn.k HB0 7zX0');
-      moment.tz.link('Asia/Calcutta|Asia/Kolkata');
+      // moment.tz.add('Asia/Calcutta|HMT BURT IST IST|-5R.k -6u -5u -6u|01232|-18LFR.k 1unn.k HB0 7zX0');
+      // moment.tz.link('Asia/Calcutta|Asia/Kolkata');
 
      // Target future date/24 hour time/Timezone.
-      const targetDate = moment.tz('2018-08-11 01:25', 'Asia/Calcutta|Asia/Kolkata');
+     const targetDate = moment.tz('2018-08-11 01:25', 'Asia/Calcutta|Asia/Kolkata');
       // Calculate the difference in seconds between the future and current date
       const diff = targetDate / 1000 - currentDate.getTime() / 1000;
       function checktime() {

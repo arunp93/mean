@@ -79,8 +79,9 @@
               <div class="carousel-item active">
                 <img class="d-block w-100" src="/assets/carousel/img1.jpg" alt="First slide">
                 <div class="carousel-caption d-none d-md-block blacktext blackoverlay">
-                  <h5>PWOLI</h5>
-                  <p>Cricket legend Sachin Tendulkar will be the chief guest for this 2018 edition of Nehru Trophy Boat Race to
+                  <h5>Sachin Tendulkar to attend famous Nehru Trophy Boat Race </h5>
+
+                   <p>Cricket legend Sachin Tendulkar will be the chief guest for this 2018 edition of Nehru Trophy Boat Race to
                     be held at Punnamada on August 11.</p>
                 </div>
               </div>
@@ -117,8 +118,7 @@
             <ul class="list-groupv nf">
   
   
-              <li class="list-group-item list-group-item-light" data-toggle="modal" data-target="#exampleModalCenter" *ngFor="let news of news"
-                [routerLink]="['/modalbox', news._id]">
+              <li class="list-group-item glassBackground" data-toggle="modal" data-target="#exampleModalCenter" *ngFor="let news of news" [routerLink]="['/modalbox', news._id]">
                 <span class="date">{{ news.date | date:'longDate'}}</span>
                 <h4>{{ news.title}}</h4>
                 <p>{{ news.description}}<i class="fas fa-long-arrow-alt-right"></i></p>

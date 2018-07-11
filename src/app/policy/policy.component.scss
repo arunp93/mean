@@ -1,0 +1,18 @@
+.policies{
+    background-image: url("/assets/bg-about.jpg");
+  background-size:cover;
+  width:100%;
+  background-attachment: fixed;
+  padding:100px 5%;
+  min-height:100vh;
+  h3,p{
+      color:white;
+  }
+  h3{
+      text-decoration: underline;
+  }
+  
+}
+hr{ 
+    border-color:rgba(255, 255, 255, 0.459);
+}

@@ -14,6 +14,8 @@ export class NavbarComponent implements OnInit {
   constructor(private translate: TranslateService) { }
 
   ngOnInit() {
+    $('img:not([alt])').attr('alt', 'NTBR Image');
+
     const LanguageSelect = document.getElementById('languageSelection');
     const options = LanguageSelect.getElementsByClassName('languages');
     for (let i = 0; i < options.length; i++) {
@@ -55,5 +57,4 @@ export class NavbarComponent implements OnInit {
         this.translate.use(language);
         $(this).toggleClass('nav-active');
       }
-
 }

@@ -27,6 +27,8 @@ import { NewsEditComponent } from './news-edit/news-edit.component';
 import { ForgotComponent } from './forgot/forgot.component';
 import { ResetComponent } from './reset/reset.component';
 import { ModalboxComponent } from './home/modalbox/modalbox.component';
+import { PolicyComponent } from './policy/policy.component';
+import { SitemapComponent } from './sitemap/sitemap.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +49,9 @@ import { ModalboxComponent } from './home/modalbox/modalbox.component';
     NewsEditComponent,
     ForgotComponent,
     ResetComponent,
-    ModalboxComponent
+    ModalboxComponent,
+    PolicyComponent,
+    SitemapComponent
   ],
   imports: [
     BrowserModule,

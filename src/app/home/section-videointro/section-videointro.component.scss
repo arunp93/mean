@@ -26,7 +26,7 @@ text-align: center;
 @supports (-webkit-marquee-repetition:infinite) and (object-fit:fill) { .video-intro {min-height: 100vh;min-width: 100vw; } }
 .video-intro{
   margin: 0;
-  
+  width: 100vw;
   height: 100vh;
   
   object-fit: fill;

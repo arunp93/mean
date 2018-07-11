@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import $ from 'jquery';
-import {} from '@types/googlemaps';
+
 @Component({
   selector: 'app-page-contact',
   templateUrl: './page-contact.component.html',
@@ -12,6 +12,8 @@ export class PageContactComponent implements OnInit {
     window.open('https://goo.gl/forms/0t6p2pFRJobEzzZI2');
   }
   ngOnInit() {
+    $('img:not([alt])').attr('alt', 'NTBR Image');
+
     $(document).ready(function() {
       $(document).on('scroll', onScroll);
       // Add smooth scrolling to all links

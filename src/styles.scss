@@ -13,8 +13,8 @@ body {
 
 
 .mb-bottom-page {
-  margin-bottom: 600px;
-  @media (max-width: 768px) {
+  margin-bottom: 599px;
+  @media (max-width: 993px) {
     margin-bottom: 100vh;
   }
   @media (max-width: 480px) {
@@ -27,6 +27,7 @@ body {
     padding-bottom: 100vh;
   }
 }
+
 p {
   color: #fff;
 }

@@ -5,13 +5,15 @@ declare var lightGallery;
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
-  styleUrls: ['./gallery.component.css']
+  styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent implements OnInit {
 
   constructor() { }
 
   ngOnInit() {
+    $('img:not([alt])').attr('alt', 'NTBR Image');
+
     const header = document.getElementById('years');
     const tabs = header.getElementsByClassName('ditems');
     for (let i = 0; i < tabs.length; i++) {

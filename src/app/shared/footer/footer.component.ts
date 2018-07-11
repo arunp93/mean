@@ -9,15 +9,18 @@ import { $ } from 'protractor';
 export class FooterComponent implements OnInit {
 
   constructor() { }
+ topFunction() {
+  document.body.scrollTop = document.documentElement.scrollTop = 0;
+
+
+
+}
   OpenfeedbackForm() {
     window.open('https://goo.gl/forms/0t6p2pFRJobEzzZI2');
   }
 
   ngOnInit() {
-    function topFunction() {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-  }
+
 
 
     }

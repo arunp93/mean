@@ -18,6 +18,8 @@ export class PageAboutComponent implements OnInit {
   }
   }
   ngOnInit() {
+    $('img:not([alt])').attr('alt', 'NTBR Image');
+
     $(document).ready(function() {
       $(document).on('scroll', onScroll);
       // Add smooth scrolling to all links

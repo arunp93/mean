@@ -10,6 +10,8 @@ export class SectionVideointroComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    $('img:not([alt])').attr('alt', 'NTBR Image');
+
     $(function() {
       if ($(window).width() <= 1366) {
           const imagebg = '/assets/mainback.jpg';

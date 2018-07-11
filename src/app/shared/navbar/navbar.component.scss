@@ -26,20 +26,42 @@
 }
 .icon-bar{
   display: inline;
-  @media (max-width:480px){
+  @media (max-width:768px){
+    display: none;
+  }
+}
+.smallmenu{
+  list-style: none;
+  @media (min-width:768px){
+    margin-top: 10px;
     display: none;
   }
 }
 .btngroupPosition{
   position: absolute;
+  padding: 0px;
   top: 100%;
-  left: 0;
-  right: 0;;
-  width: 100%;
-  top: 100%;
+  
+  .btn-sm{
+    color: #fff;
+  }
   .btn{
+    background: transparent;
     width: 100%;
     margin: auto;
+    a{
+      color: #fff;
+      text-decoration: none;
+    }
+    @media (min-width:620px) {
+      display: none;
+      
+    }
+    @media (min-width:400px) {
+      
+      
+    }
+    
   }
 }
 nav {
@@ -59,15 +81,20 @@ nav {
     
   }
 #languageSelection{
+  cursor: pointer;
   opacity: 0.8;
   background-color: transparent;
   border: 1px solid rgb(29, 161, 242);
   border-radius:10px;
   overflow: hidden;
   .languages{
+    cursor: pointer;
     border: none !important;
     box-shadow: 0;
     width: 120px;
+    @media (max-width:767px){
+      width: 60px;
+    }
     overflow: hidden;
     
   }
@@ -77,38 +104,22 @@ nav {
     background: linear-gradient(45deg, #185a9d, #43cea2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: white;
     width: 90px;
+    @media (max-width:767px){
+      width: 40px;
+    }
     transition: all 0.5s ease-in-out; 
   }
  
   .languagenotSelected{
     background-color: transparent;
-    width: 30px;
+    width: 40px;
     overflow-x: hidden;
     color: rgb(29, 161, 242);
     transition: all 0.5s ease-in-out; 
   }
 }
-  .langbutt1{
-    padding:0px 10px;
-    font-weight: 800;
-    color:white;
-    background-color: transparent;
-    border:none;
-    border-right:1px solid rgba(255, 255, 255, 0.514);
-    
-  }
 
-  .langbutt2{
-    padding:0px 10px;
-    font-weight: 600;
-    color:white;
-    border:none;
-    background-color: transparent;
-    
-  }
-  .langbutt2,.langbutt1:focus{
-    outline:none;
-  }
+ 
   .fa-facebook:hover{
     color: rgb(59,89,152) !important;
   }

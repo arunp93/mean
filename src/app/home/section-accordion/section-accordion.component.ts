@@ -10,6 +10,8 @@ export class SectionAccordionComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    $('img:not([alt])').attr('alt', 'NTBR Image');
+
     const header = document.getElementById('accordion');
     const tabs = header.getElementsByClassName('tabs');
     for (let i = 0; i < tabs.length; i++) {

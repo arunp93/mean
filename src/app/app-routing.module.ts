@@ -15,6 +15,8 @@ import { NewsEditComponent } from './news-edit/news-edit.component';
 import { ResetComponent } from './reset/reset.component';
 import { ForgotComponent } from './forgot/forgot.component';
 import { ModalboxComponent } from './home/modalbox/modalbox.component';
+import { SitemapComponent } from './sitemap/sitemap.component';
+import { PolicyComponent } from './policy/policy.component';
 const routes: Routes = [
   {
     path: '',
@@ -40,6 +42,14 @@ const routes: Routes = [
   {
     path: 'gallery',
     component: GalleryComponent
+  },
+  {
+    path: 'sitemap',
+    component: SitemapComponent
+  },
+  {
+    path: 'policy',
+    component: PolicyComponent
   },
 
   {

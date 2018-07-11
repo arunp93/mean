@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-md  navbar-fixed navbar-color glassBackground">
   <!-- Brand -->
   <a class="navbar-brand">
-    <img src="/assets/ntbrlogo1.png" class="ntbrlogo" alt="Logo">
-    <img src="/assets/log_5.png" class="statelogo" alt="Kerala state Logo">
+    <img src="/assets/ntbrlogo1.png" class="ntbrlogo"  alt="Logo">
+    <img src="/assets/log_5.png" class="statelogo" onClick="return confirm('This link shall take you to a page/website outside this website. For any query regarding the contents of the linked page/website, please contact the webmaster of the concerned website!')"  alt="Kerala state Logo">
   </a>
   <div class="icon-bar">
     <a class="active" href="https://www.facebook.com/NehruTrophyNTBR" title="Visit our Facebook page"  onClick="return confirm('This link shall take you to a page/website outside this website. For any query regarding the contents of the linked page/website, please contact the webmaster of the concerned website!')">
@@ -25,18 +25,14 @@
     </a>
 
   </div>
-  <ul>
-    <li>
-      <button class=" downloadButton"  type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-        {{ 'about.download' | translate }}
+ 
+    <li class="smallmenu">
+      <button class="btn  btn-primary"   type="button" data-toggle="collapse" data-target="#nav-small" aria-expanded="false" aria-controls="nav-small">
+        menu
          </button>
-         <!-- <div class="btn-group collapse " id="collapseExample" role="group" aria-label="Basic example">
-             <p> {{ 'about.viewaspdf' | translate }}</p>
-            <button type="button" class="btn btn-secondary btn-sm"  (click)="downloadPDFeng()"> {{ 'about.english' | translate }}</button>
-            <button type="button" class="btn btn-secondary btn-sm"  (click)="downloadPDFmal()"> {{ 'about.malayalam' | translate }}</button>
-          </div> -->
+
     </li>
-  </ul>
+ 
   <!-- Navbar links -->
   <div class="collapse navbar-collapse " id="collapsibleNavbar">
 
@@ -62,11 +58,11 @@
       <span id="sizeup" class="fas fa-plus"></span>
     </div>&nbsp;
   </div>
-  <div class="btn-group btngroupPosition glassBackground" role="group" aria-label="Basic example">
-      <button type="button" class="btn btn-secondary">HOME</button>
-      <button type="button" class="btn btn-secondary">ABOUT</button>
-      <button type="button" class="btn btn-secondary">CONTACT</button>
-      <button type="button" class="btn btn-secondary">GALLERY</button>
+  <div class="btn-group btngroupPosition glassBackground collapse row" id="nav-small" role="navigation" aria-label="nav-small">
+      <button type="button" class="btn btn-secondary" ><a class="nav-link" routerLink='/home' routerLinkActive=' nav-active ' href="home">{{ 'nav.home' | translate }}</a></button>
+      <button type="button" class="btn btn-secondary"> <a class="nav-link" routerLink='/about' routerLinkActive=' nav-active ' href="about">{{ 'nav.about' | translate }}</a></button>
+      <button type="button" class="btn btn-secondary"><a class="nav-link" routerLink='/contact' routerLinkActive=' nav-active ' href="contact">{{ 'nav.contact' | translate }}</a></button>
+      <button type="button" class="btn btn-secondary"> <a class="nav-link" routerLink='/gallery' routerLinkActive=' nav-active ' href="gallery">{{ 'nav.gallery' | translate }}</a></button>
     </div>
   <!-- navbar ends -->
   <div id="languageSelection">

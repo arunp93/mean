@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.http.post('/api/signin', this.loginData).subscribe(resp => {
+    this.http.post('/api/RK5uqFWEa0nzJ7qGhDrs', this.loginData).subscribe(resp => {
       this.data = resp;
       sessionStorage.setItem('jwtToken', this.data.token);
       this.router.navigate(['news']);

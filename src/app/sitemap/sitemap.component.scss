@@ -1,0 +1,28 @@
+.sitemap{
+    background-image: url("/assets/bg-about.jpg");
+  background-size:cover;
+  width:100%;
+  background-attachment: fixed;
+  padding:100px 5%;
+  min-height:100vh;
+  h3{
+      color:white;
+      text-align:center;
+  }
+}
+ul{
+    margin:0px auto;
+}
+li{
+    padding-left:3em;
+    cursor:pointer;
+}
+li.headlinks{
+            background-color:rgb(238, 238, 238)!important;
+            font-weight:bolder;
+            padding-left:1em;
+            color:black;
+        }
+        li.headlinks:hover{
+            background-color:rgb(207, 207, 207)!important;
+        }
