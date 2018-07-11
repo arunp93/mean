@@ -9,7 +9,9 @@ text-align: center;
     position: absolute;
     top: 0;
 
-    
+  .image-intro{
+    height: 100vh;
+  }  
 }
 .mask{
   height: 100vh;
@@ -26,13 +28,14 @@ text-align: center;
 @supports (-webkit-marquee-repetition:infinite) and (object-fit:fill) { .video-intro {min-height: 100vh;min-width: 100vw; } }
 .video-intro{
   margin: 0;
-  width: 100vw;
+  min-width: 100vw;
   height: 100vh;
-  
+  overflow: hidden;
   object-fit: fill;
   
   @media (max-width:1000px){
     height: 100vh;
+    width: 200%;
     @media (max-width:768px){
       left: -100px;
     }

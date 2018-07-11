@@ -125,6 +125,12 @@
   }
   }
 }
+.hide-mobile{
+  @media screen and (max-width: 768px) {
+    width: 0px;
+    display: none;
+  }
+}
 #mobileAboutDownload{
   justify-content: center;
 }
